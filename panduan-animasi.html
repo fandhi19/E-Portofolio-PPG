@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panduan & Visualisasi Animasi Reveal On-Scroll | E-Portofolio PPG UNY 2026</title>
+    <meta name="description" content="Visual blueprint, petunjuk alur, motion trails, dan staggered delay animasi reveal on-scroll untuk website E-Portofolio Seminar PPG Retno Kumala Sari, S.Pd.,M.Pd." />
+
+    <link rel="shortcut icon" href="images/Logo Uny outlitne.png" type="image/x-icon" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Base Project CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Blueprint & Motion Trail Specialized Styles -->
+    <style>
+      :root {
+        --trail-cyan: #06b6d4;
+        --trail-blue: #2563eb;
+        --trail-amber: #f59e0b;
+        --trail-purple: #8b5cf6;
+        --trail-emerald: #10b981;
+      }
+
+      body {
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* =========================================================================
+         TOP MOTION DIRECTOR HUD (STICKY CONTROL BAR)
+         ========================================================================= */
+      .motion-hud-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background: rgba(14, 23, 38, 0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        padding: 12px 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hud-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hud-badge-live {
+        background: rgba(6, 182, 212, 0.2);
+        border: 1px solid var(--trail-cyan);
+        color: var(--trail-cyan);
+        font-size: 0.68rem;
+        font-weight: 800;
+        padding: 3px 8px;
+        border-radius: 999px;
+        letter-spacing: 0.08em;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .hud-badge-live::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--trail-cyan);
+        box-shadow: 0 0 8px var(--trail-cyan);
+        animation: pulseLive 1.5s infinite;
+      }
+
+      @keyframes pulseLive {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.8); }
+      }
+
+      .hud-title {
+        font-size: 0.92rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+      }
+
+      .hud-sub {
+        font-size: 0.75rem;
+        color: #94a3b8;
+      }
+
+      .hud-controls-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .hud-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 7px 14px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .hud-btn:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-1px);
+      }
+
+      .hud-btn.active {
+        background: var(--trail-cyan);
+        color: #0e1726;
+        border-color: var(--trail-cyan);
+        box-shadow: 0 0 16px rgba(6, 182, 212, 0.45);
+      }
+
+      .hud-btn-nav {
+        background: var(--electric-blue);
+        border-color: var(--electric-blue);
+        color: #ffffff;
+      }
+
+      .hud-btn-nav:hover {
+        background: #1d4ed8;
+      }
+
+      /* Push content below sticky HUD */
+      body {
+        padding-top: 68px;
+      }
+
+      /* =========================================================================
+         MOTION TRAILS & BLUEPRINT ANNOTATIONS
+         ========================================================================= */
+      .blueprint-container {
+        position: relative;
+      }
+
+      /* Motion Trail Badge Container */
+      .motion-badge {
+        position: absolute;
+        z-index: 80;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 14px rgba(14, 23, 38, 0.25);
+        pointer-events: none;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        white-space: nowrap;
+      }
+
+      /* Badge Themes */
+      .badge-fade-up {
+        background: rgba(37, 99, 235, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+      }
+
+      .badge-delay {
+        background: rgba(245, 158, 11, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #0e1726;
+        font-weight: 800;
+      }
+
+      .badge-left {
+        background: rgba(6, 182, 212, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #0e1726;
+        font-weight: 800;
+      }
+
+      .badge-right {
+        background: rgba(139, 92, 246, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+      }
+
+      .badge-scale {
+        background: rgba(16, 185, 129, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+      }
+
+      .badge-gyro {
+        background: rgba(236, 72, 153, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+      }
+
+      /* Motion Trail Arrow Lines (Dashed SVGs) */
+      .motion-trail-svg {
+        position: absolute;
+        pointer-events: none;
+        z-index: 75;
+        overflow: visible;
+        transition: opacity 0.3s ease;
+      }
+
+      .trail-line-up {
+        stroke: var(--trail-blue);
+        stroke-width: 2.2;
+        stroke-dasharray: 6 4;
+        animation: dashUp 1.2s linear infinite;
+      }
+
+      .trail-line-left {
+        stroke: var(--trail-cyan);
+        stroke-width: 2.2;
+        stroke-dasharray: 6 4;
+        animation: dashRight 1.2s linear infinite;
+      }
+
+      .trail-line-right {
+        stroke: var(--trail-purple);
+        stroke-width: 2.2;
+        stroke-dasharray: 6 4;
+        animation: dashLeft 1.2s linear infinite;
+      }
+
+      @keyframes dashUp {
+        from { stroke-dashoffset: 20; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      @keyframes dashRight {
+        from { stroke-dashoffset: 20; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      @keyframes dashLeft {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 20; }
+      }
+
+      /* Wireframe / Ghost Initial Position Box */
+      .ghost-origin-box {
+        position: absolute;
+        border: 2px dashed rgba(37, 99, 235, 0.45);
+        background: rgba(37, 99, 235, 0.05);
+        border-radius: 12px;
+        pointer-events: none;
+        z-index: 70;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.65rem;
+        color: rgba(37, 99, 235, 0.8);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        transition: opacity 0.3s ease;
+      }
+
+      /* Toggle hiding blueprint */
+      body.hide-blueprint .motion-badge,
+      body.hide-blueprint .motion-trail-svg,
+      body.hide-blueprint .ghost-origin-box,
+      body.hide-blueprint .section-flow-card {
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      /* =========================================================================
+         SECTION TIMELINE WATERFALL CARDS (EXPLANATORY CALLOUTS)
+         ========================================================================= */
+      .section-flow-card {
+        background: rgba(14, 23, 38, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #ffffff;
+        border-radius: 16px;
+        padding: 16px 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      .flow-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .flow-step-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.68rem;
+        font-weight: 800;
+        color: var(--trail-cyan);
+        letter-spacing: 0.08em;
+      }
+
+      .flow-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+      }
+
+      .flow-desc {
+        font-size: 0.82rem;
+        color: #cbd5e1;
+        max-width: 600px;
+        line-height: 1.5;
+      }
+
+      .timeline-pills-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .time-node {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 6px 12px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .time-node .time-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.64rem;
+        color: var(--trail-amber);
+        font-weight: 700;
+      }
+
+      .time-node .time-action {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .time-arrow {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.75rem;
+      }
+
+      /* Slow-motion multiplier */
+      body.speed-slow .reveal-fade-up,
+      body.speed-slow .reveal-fade-left,
+      body.speed-slow .reveal-fade-right,
+      body.speed-slow .reveal-scale {
+        transition-duration: 2.4s !important;
+      }
+
+      body.speed-slowest .reveal-fade-up,
+      body.speed-slowest .reveal-fade-left,
+      body.speed-slowest .reveal-fade-right,
+      body.speed-slowest .reveal-scale {
+        transition-duration: 4.5s !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SVG Sunburst Radial Geometric Icon Definition -->
+    <svg style="display: none">
+      <defs>
+        <g id="sunburst-shape">
+          <circle cx="50" cy="50" r="14" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <line x1="50" y1="30" x2="50" y2="6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="50" y1="70" x2="50" y2="94" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="30" y1="50" x2="6" y2="50" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="70" y1="50" x2="94" y2="50" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="36" y1="36" x2="19" y2="19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="64" y1="64" x2="81" y2="81" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="36" y1="64" x2="19" y2="81" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="64" y1="36" x2="81" y2="19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="42" y1="32" x2="33" y2="11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="58" y1="68" x2="67" y2="89" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="58" y1="32" x2="67" y2="11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="42" y1="68" x2="33" y2="89" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="32" y1="42" x2="11" y2="33" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="68" y1="58" x2="89" y2="67" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="32" y1="58" x2="11" y2="67" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="68" y1="42" x2="89" y2="33" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+        </g>
+      </defs>
+    </svg>
+
+    <!-- =========================================================================
+         TOP MOTION DIRECTOR HUD
+         ========================================================================= -->
+    <header class="motion-hud-bar">
+      <div class="hud-brand">
+        <span class="hud-badge-live">LIVE BLUEPRINT</span>
+        <div>
+          <div class="hud-title">VISUALISASI REVEAL ON-SCROLL &amp; MOTION TRAILS</div>
+          <div class="hud-sub">E-Portofolio PPG UNY 2026 • Retno Kumala Sari, S.Pd.,M.Pd</div>
+        </div>
+      </div>
+
+      <div class="hud-controls-group">
+        <button class="hud-btn active" id="toggleTrailsBtn" onclick="toggleBlueprintTrails()">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Anotasi &amp; Trails (ON)</span>
+        </button>
+        <button class="hud-btn" onclick="replayAllAnimations()">
+          <i class="fa-solid fa-arrow-rotate-right"></i>
+          <span>Putar Ulang (Replay)</span>
+        </button>
+        <button class="hud-btn" id="speedBtn" onclick="cycleSpeedMode()">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span id="speedLabel">Kecepatan: 1.0x</span>
+        </button>
+        <a href="index.html" class="hud-btn hud-btn-nav">
+          <i class="fa-solid fa-globe"></i>
+          <span>Website Utama (index.html)</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         NAVBAR
+         ========================================================================= -->
+    <nav class="site-header" id="siteHeader" style="top: 68px">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand-logo">
+          <img src="images/logo_uny.png" alt="Logo UNY" class="brand-logo-img" />
+          <span>SEMINAR PPG</span>
+        </a>
+        <div class="nav-links">
+          <a href="#hero-blueprint" class="nav-link active">01. HERO</a>
+          <a href="#roadmap-blueprint" class="nav-link">02. ROADMAP</a>
+          <a href="#inovasi-blueprint" class="nav-link">03. INOVASI</a>
+          <a href="#materi-blueprint" class="nav-link">04. MATERI PPG</a>
+          <a href="#agenda-blueprint" class="nav-link">05. DOKUMEN</a>
+        </div>
+        <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>LIHAT PORTOFOLIO PPL</span>
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- =========================================================================
+           SECTION 1: HERO SECTION REVEAL BLUEPRINT
+           ========================================================================= -->
+      <section class="hero-section blueprint-container" id="hero-blueprint" style="padding-top: 100px">
+        <!-- Sunburst Ornaments with scroll linked note -->
+        <svg class="sunburst-icon hero-sunburst-top" viewBox="0 0 100 100" aria-hidden="true">
+          <use href="#sunburst-shape" />
+        </svg>
+        <div class="motion-badge badge-left" style="top: 140px; right: 80px">
+          <i class="fa-solid fa-rotate"></i> SCROLL-LINKED ROTATION (scrollY × 0.24°)
+        </div>
+
+        <svg class="sunburst-icon hero-sunburst-left" viewBox="0 0 100 100" aria-hidden="true">
+          <use href="#sunburst-shape" />
+        </svg>
+
+        <div class="container">
+          <!-- Flow Explanation Card -->
+          <div class="section-flow-card">
+            <div class="flow-meta">
+              <span class="flow-step-tag">SECTION 01 • WATERFALL CASCADE ARCHITECTURE</span>
+              <h2 class="flow-title">Hero Section: Sequential Staggered Slide-Up &amp; Slide-In</h2>
+              <p class="flow-desc">Teks pembuka tidak muncul bersamaan agar tidak membuat pengguna kaget (visual overload). Komponen teks meluncur bertahap dari bawah dengan interval 100ms, sementara kartu profil meluncur dari sisi kanan.</p>
+            </div>
+            <div class="timeline-pills-row">
+              <div class="time-node">
+                <span class="time-label">+0ms</span>
+                <span class="time-action">Tag Pill</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+100ms</span>
+                <span class="time-action">H1 Title</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+200ms</span>
+                <span class="time-action">Deskripsi</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+300ms</span>
+                <span class="time-action">CTA Group</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+400ms</span>
+                <span class="time-action">Count-Up Stats</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-grid" style="position: relative">
+            <!-- Sisi Kiri: Teks Utama & Aksi -->
+            <div class="hero-left-content" style="position: relative">
+              <!-- Ghost origin indicator -->
+              <div class="ghost-origin-box" style="top: -6px; left: 0; width: 220px; height: 32px">
+                <i class="fa-solid fa-arrows-up-to-line"></i> ORIGIN: translateY(34px)
+              </div>
+
+              <div style="margin-bottom: 16px; position: relative" class="reveal-fade-up">
+                <span class="tag-system-updates"><i class="fa-solid fa-graduation-cap"></i> SEMINAR PENDIDIKAN 4.0</span>
+                <div class="motion-badge badge-fade-up" style="top: -12px; left: 190px">
+                  <i class="fa-solid fa-arrow-up"></i> REVEAL ON SCROLL • DELAY: 0ms
+                </div>
+              </div>
+
+              <div style="position: relative">
+                <h1 class="hero-title reveal-fade-up delay-100">
+                  Perjalanan Belajar<br />
+                  Inovasi Mengajar<br />
+                  Dengan <span class="text-italic-accent">super power.</span>
+                </h1>
+                <div class="motion-badge badge-delay" style="top: 20px; right: -20px">
+                  <i class="fa-solid fa-clock"></i> STAGGERED DELAY: 100ms • translateY(34px) → 0
+                </div>
+              </div>
+
+              <div style="position: relative">
+                <p class="hero-desc reveal-fade-up delay-200">
+                  Dokumentasi perjalanan belajar terstruktur, refleksi komprehensif, dan inovasi pembelajaran selama perkuliahan PPG Calon Guru. Temukan bagaimana saya bertransformasi menjadi pendidik profesional masa depan.
+                </p>
+                <div class="motion-badge badge-fade-up" style="bottom: -15px; left: 0">
+                  <i class="fa-solid fa-arrow-up"></i> FADE &amp; SLIDE UP • DELAY: 200ms
+                </div>
+              </div>
+
+              <!-- Tombol CTA & Komunitas / Sosial -->
+              <div class="hero-cta-group reveal-fade-up delay-300" style="position: relative; margin-top: 25px">
+                <a href="#materi-blueprint" class="btn-pill-glass">
+                  <span>MULAI EKSPLORASI</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <div class="motion-badge badge-delay" style="top: -16px; left: 10px">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> SHIMMER SWEEP + ARROW SHIFT +6px
+                </div>
+                <div class="community-join-wrap">
+                  <span class="community-label">Pendidikan Informatika UNY</span>
+                  <div class="community-social-icons">
+                    <a href="https://www.instagram.com/fandhidk17/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:retnokumalasari@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://e-portofolio-fandhi.vercel.app/" target="_blank" aria-label="Portofolio PPL"><i class="fa-solid fa-globe"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Baris Statistik (Stats Row) -->
+              <div class="hero-stats-row reveal-fade-up delay-400" style="position: relative">
+                <div class="motion-badge badge-scale" style="top: -24px; left: 0">
+                  <i class="fa-solid fa-arrow-up-1-9"></i> COUNT-UP ANIMATION TRIGGER (1800ms)
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number count-up" data-target="2" data-suffix="+">0+</span>
+                  <span class="stat-label">Semester Tempuh Penuh Refleksi</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number count-up" data-target="11" data-suffix="+">0+</span>
+                  <span class="stat-label">Mata Kuliah Pedagogik Dikuasai</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number count-up" data-target="100" data-suffix="%">0%</span>
+                  <span class="stat-label">PPL I &amp; II Tuntas Terbimbing</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sisi Kanan: Foto Pendidik + Titik Pelacak Pedagogik + Kartu Kaca -->
+            <div class="hero-right-visual" style="position: relative">
+              <!-- Ghost origin indicator -->
+              <div class="ghost-origin-box" style="top: 0; right: -40px; width: 100%; height: 100%; border-color: rgba(139, 92, 246, 0.4)">
+                ORIGIN: translateX(+40px)
+              </div>
+
+              <!-- Motion trail SVG line -->
+              <svg class="motion-trail-svg" width="300" height="60" style="top: -35px; right: 20px">
+                <line x1="280" y1="30" x2="60" y2="30" class="trail-line-right" />
+                <polygon points="50,30 65,23 65,37" fill="var(--trail-purple)" />
+              </svg>
+
+              <div class="hero-main-card-frame float-gentle reveal-fade-right delay-200">
+                <div class="motion-badge badge-right" style="top: -15px; left: 20px">
+                  <i class="fa-solid fa-arrow-left"></i> SLIDE IN FROM RIGHT • DELAY: 200ms
+                </div>
+
+                <div class="hero-athlete-img-wrap">
+                  <img src="images/fototampan3.png" alt="Retno Kumala Sari, S.Pd.,M.Pd" class="hero-athlete-img" />
+                </div>
+
+                <!-- Floating Glassmorphic Status Badge (Bottom Left) -->
+                <div class="floating-feedback-badge float-badge" style="position: absolute">
+                  <div class="motion-badge badge-fade-up" style="top: -24px; left: 0">
+                    <i class="fa-solid fa-water"></i> GENTLE BOBBING (floatBadge 4.5s)
+                  </div>
+                  <div class="avatar-stack-mini">
+                    <img src="images/PAS_foto_ppg.png" alt="Foto PPG" />
+                    <img src="images/Foto_bareng.jpeg" alt="PPL Bareng" />
+                    <img src="images/ganteng.png" alt="Projek" />
+                  </div>
+                  <div class="feedback-text-wrap">
+                    <span class="feedback-bold">Retno Kumala Sari, S.Pd.,M.Pd</span>
+                    <span class="feedback-sub">PPG Calon Guru UNY 2026</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SECTION 2: ROADMAP KOMPETENSI REVEAL BLUEPRINT
+           ========================================================================= -->
+      <section class="health-tech-section blueprint-container" id="roadmap-blueprint">
+        <div class="container">
+          <!-- Flow Explanation Card -->
+          <div class="section-flow-card">
+            <div class="flow-meta">
+              <span class="flow-step-tag">SECTION 02 • BIDIRECTIONAL CONVERGENCE &amp; 3D SPATIAL DEPTH</span>
+              <h2 class="flow-title">Roadmap: Foto Meluncur dari Kiri, Konten dari Kanan, 3D Gyroscope Card</h2>
+              <p class="flow-desc">Dua elemen saling mendekat (konvergensi dua arah) menciptakan dinamisme visual. 3 Kartu pilar di dalamnya bereaksi secara interaktif terhadap kursor dalam ruang 3D (perspective 900px).</p>
+            </div>
+            <div class="timeline-pills-row">
+              <div class="time-node">
+                <span class="time-label">+0ms</span>
+                <span class="time-action">Capsule Container</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+100ms</span>
+                <span class="time-action">Foto (Slide-Left)</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+200ms</span>
+                <span class="time-action">Roadmap Deskripsi</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">+300ms</span>
+                <span class="time-action">3D Gyro Cards</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="health-capsule-card reveal-fade-up" style="position: relative">
+            <div class="motion-badge badge-fade-up" style="top: -14px; left: 30px">
+              <i class="fa-solid fa-arrow-up"></i> CAPSULE CARD: FADE &amp; SLIDE UP
+            </div>
+
+            <!-- Sisi Kiri: Foto Praktik Lapangan dengan Titik Sensor -->
+            <div class="runner-legs-wrap reveal-fade-left delay-100" style="position: relative">
+              <div class="motion-badge badge-left" style="top: 15px; left: 15px">
+                <i class="fa-solid fa-arrow-right"></i> SLIDE IN FROM LEFT (-40px)
+              </div>
+              <img src="images/praktik1.jpeg" alt="Praktik Pengalaman Lapangan" class="runner-legs-img" />
+              <!-- Pedagogical sensor tracking dots -->
+              <div class="sensor-dot-knee" title="Student Engagement"></div>
+              <div class="sensor-dot-ankle" title="Active Inquiry"></div>
+              <div class="motion-badge badge-scale" style="bottom: 15px; left: 15px">
+                <i class="fa-solid fa-satellite-dish"></i> RADAR PING EXPANSION (2.4s)
+              </div>
+            </div>
+
+            <!-- Sisi Kanan: Penjelasan Roadmap & 3 Pilar Kompetensi Guru -->
+            <div class="health-info-right reveal-fade-right delay-200" style="position: relative">
+              <div class="motion-badge badge-right" style="top: -12px; right: 0">
+                <i class="fa-solid fa-arrow-left"></i> SLIDE IN FROM RIGHT (+40px)
+              </div>
+              <div>
+                <span class="tag-system-updates">ROADMAP KOMPETENSI GURU</span>
+              </div>
+              <p class="health-desc">
+                Membangun fondasi filosofis pendidikan Ki Hadjar Dewantara, menghubungkan konsep teoritis dengan realitas di kelas, serta mengintegrasikan kompetensi digital dalam pembelajaran abad ke-21 yang berkesinambungan.
+              </p>
+
+              <!-- 3 Kartu Mini Pilar Kompetensi -->
+              <div class="health-cards-row" style="position: relative">
+                <div class="motion-badge badge-gyro" style="top: -24px; left: 0">
+                  <i class="fa-solid fa-cube"></i> INTERACTIVE 3D GYROSCOPE TILT (rotateX &amp; rotateY)
+                </div>
+
+                <!-- Kartu 1: Filosofis KHD -->
+                <div class="organ-mini-card reveal-fade-up delay-100">
+                  <div class="organ-icon-wrap">
+                    <i class="fa-solid fa-book-open-reader" style="font-size: 2.2rem; color: #64748b"></i>
+                  </div>
+                  <span class="organ-label-badge">Filosofis KHD</span>
+                </div>
+
+                <!-- Kartu 2: Pembelajaran Sosial Emosional (Heart Glow) -->
+                <div class="organ-mini-card reveal-fade-up delay-200" style="border-color: rgba(239, 68, 68, 0.4); background: rgba(254, 242, 242, 0.7)">
+                  <div class="organ-icon-wrap">
+                    <i class="fa-solid fa-heart-pulse heart-beat-anim" style="font-size: 2.2rem; color: #ef4444; filter: drop-shadow(0 4px 8px rgba(239, 68, 68, 0.4))"></i>
+                  </div>
+                  <div class="organ-label-badge">
+                    <span>Sosial Emosional</span>
+                    <span class="expand-circle-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                  </div>
+                </div>
+
+                <!-- Kartu 3: Kompetensi Digital TPACK -->
+                <div class="organ-mini-card reveal-fade-up delay-300">
+                  <div class="organ-icon-wrap">
+                    <i class="fa-solid fa-laptop-code" style="font-size: 2.2rem; color: #2563eb"></i>
+                  </div>
+                  <span class="organ-label-badge">Inovasi TPACK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SECTION 3: DESAIN INOVASI REVEAL BLUEPRINT
+           ========================================================================= -->
+      <section class="balanced-meals-section blueprint-container" id="inovasi-blueprint">
+        <div class="container">
+          <!-- Flow Explanation Card -->
+          <div class="section-flow-card">
+            <div class="flow-meta">
+              <span class="flow-step-tag">SECTION 03 • PROGRESSIVE METRICS EXPANSION</span>
+              <h2 class="flow-title">Desain Inovasi: Floating Circle &amp; Real-Time Progress Bar Fill</h2>
+              <p class="flow-desc">Ketika section ini masuk ke viewport, nilai persentase dihitung naik dari 0.0% ke 96.4%, dan bilah ketercapaian TP (progress track) bergerak memanjang dari 0% ke 96% secara dramatis.</p>
+            </div>
+            <div class="timeline-pills-row">
+              <div class="time-node">
+                <span class="time-label">0% → 96%</span>
+                <span class="time-action">Bar Fill (1600ms)</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">0.0% → 96.4%</span>
+                <span class="time-action">Count-Up Math</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">Loop (6s)</span>
+                <span class="time-action">Organic Float</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="meals-grid" style="position: relative">
+            <!-- Sisi Kiri: Judul, Deskripsi Diferensiasi, Filter & Tanda Tangan -->
+            <div class="meals-left-content reveal-fade-left" style="position: relative">
+              <div class="motion-badge badge-left" style="top: -14px; left: 0">
+                <i class="fa-solid fa-arrow-right"></i> SLIDE IN FROM LEFT (-40px)
+              </div>
+
+              <h2 class="meals-title">
+                Desain Pembelajaran yang<br />
+                Berpusat pada <span class="text-italic-accent">siswa.</span>
+              </h2>
+              <p class="meals-desc">
+                Penerapan asesmen diagnostik, pembelajaran berdiferensiasi (konten, proses, produk), dan model Project-Based Learning (PjBL) untuk memastikan proses belajar yang inklusif, relevan, serta adaptif terhadap kebutuhan setiap
+                anak.
+              </p>
+
+              <!-- Tombol Filter Pendekatan Mengajar -->
+              <div class="diet-filter-buttons">
+                <div class="diet-pill-card active-dark">
+                  <span class="diet-icon-circle"><i class="fa-solid fa-shapes"></i></span>
+                  <span>Diferensiasi Pembelajaran</span>
+                  <i class="fa-solid fa-check" style="font-size: 0.75rem; margin-left: 4px"></i>
+                </div>
+                <div class="diet-pill-card glass-light">
+                  <span class="diet-icon-circle"><i class="fa-solid fa-clipboard-check"></i></span>
+                  <span>Asesmen Autentik</span>
+                </div>
+              </div>
+
+              <!-- Stempel Tanda Tangan Guru Profesional -->
+              <div class="chef-signature-stamp">
+                <div class="signature-script">Retno Kumala Sari, S.Pd.,M.Pd</div>
+                <div class="signature-role">Guru Profesional • UNY 2026</div>
+              </div>
+            </div>
+
+            <!-- Sisi Kanan: Foto Dokumentasi Bulat Besar + Kartu Efektivitas Kaca -->
+            <div class="meals-right-visual reveal-fade-right delay-150" style="position: relative">
+              <svg class="sunburst-icon meals-sunburst-top" viewBox="0 0 100 100" aria-hidden="true">
+                <use href="#sunburst-shape" />
+              </svg>
+
+              <!-- Lingkaran Showcase Dokumentasi Kelas PPL -->
+              <div class="salad-bowl-container float-salad">
+                <div class="motion-badge badge-scale" style="top: 20px; left: 20px">
+                  <i class="fa-solid fa-circle-notch"></i> ORGANIC FLOAT (floatSalad 6s)
+                </div>
+                <img src="images/Foto_bareng.jpeg" alt="Dokumentasi Praktik Mengajar" class="salad-bowl-img" />
+              </div>
+
+              <!-- Floating Performance Card Top Right -->
+              <div class="floating-calorie-card float-badge" style="position: absolute">
+                <div class="motion-badge badge-delay" style="top: -24px; right: 0">
+                  <i class="fa-solid fa-chart-line"></i> PROGRESS FILL: 0% → 96%
+                </div>
+                <div class="calorie-row-top">
+                  <span class="calorie-label">Ketercapaian TP</span>
+                  <span class="calorie-value count-up" data-target="96.4" data-decimals="1" data-suffix="%">0.0%</span>
+                </div>
+                <div class="calorie-progress-track">
+                  <div class="calorie-progress-fill" data-progress="96" style="width: 0%"></div>
+                </div>
+                <div class="calorie-subtext">Scaffolding &amp; Pendampingan Terstruktur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SECTION 4: MATERI PPG & REFLEKSI REVEAL BLUEPRINT
+           ========================================================================= -->
+      <section class="yoga-styles-section blueprint-container" id="materi-blueprint">
+        <div class="container">
+          <!-- Flow Explanation Card -->
+          <div class="section-flow-card">
+            <div class="flow-meta">
+              <span class="flow-step-tag">SECTION 04 • STAGGERED GRID SCALE-UP WATERFALL</span>
+              <h2 class="flow-title">Materi PPG: 11 Kartu Galeri dengan Skala Halus &amp; Hover Zoom</h2>
+              <p class="flow-desc">Setiap baris kartu galeri mekar berurutan dengan animasi scale-up (skala 0.93 → 1.0) dengan penambahan delay +50ms per kartu. Saat mouse mendekat, foto melakukan pembesaran halus (1.15x).</p>
+            </div>
+            <div class="timeline-pills-row">
+              <div class="time-node">
+                <span class="time-label">MK 01</span>
+                <span class="time-action">Delay 100ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">MK 02</span>
+                <span class="time-action">Delay 150ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">MK 03</span>
+                <span class="time-action">Delay 200ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">MK 04-06</span>
+                <span class="time-action">250-350ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">Hover</span>
+                <span class="time-action">Zoom 1.15x</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Header Row -->
+          <div class="yoga-header-row reveal-fade-up" style="position: relative">
+            <div class="motion-badge badge-fade-up" style="top: -10px; left: 0">
+              <i class="fa-solid fa-arrow-up"></i> SECTION HEADER: FADE &amp; SLIDE UP
+            </div>
+            <div>
+              <span class="tag-system-updates"><i class="fa-solid fa-graduation-cap"></i> STRUKTUR KURIKULUM PPG</span>
+              <h2 class="yoga-main-title" style="margin-top: 12px">
+                Eksplorasi Mata Kuliah &amp;<br />
+                Refleksi <span class="text-italic-accent">mendalam.</span>
+              </h2>
+            </div>
+            <p class="yoga-header-desc">Dokumentasi komprehensif atas 11 mata kuliah yang ditempuh selama Semester 1 dan Semester 2. Mengintegrasikan pemahaman konseptual, analisis kasus di kelas, serta pengalaman praktik lapangan.</p>
+          </div>
+
+          <!-- Tab Filter Semester -->
+          <div class="semester-tabs-container reveal-fade-up delay-150">
+            <button class="semester-tab-btn active" id="tab-all" onclick="switchSemester('all', this)"><i class="fa-solid fa-layer-group"></i> Semua Semester (11 MK)</button>
+            <button class="semester-tab-btn" id="tab-sem1" onclick="switchSemester('sem1', this)"><i class="fa-solid fa-1"></i> Semester 01 (6 MK)</button>
+            <button class="semester-tab-btn" id="tab-sem2" onclick="switchSemester('sem2', this)"><i class="fa-solid fa-2"></i> Semester 02 (5 MK)</button>
+          </div>
+
+          <!-- SEMESTER 01 BLUEPRINT CARDS -->
+          <div class="semester-group-block" id="block-sem1">
+            <div class="semester-group-header reveal-fade-up">
+              <div class="sem-badge-pill">SEMESTER 01</div>
+              <h3 class="sem-group-title">Fondasi Pedagogik &amp; Praktik Terbimbing</h3>
+              <span class="sem-count-tag">6 Mata Kuliah</span>
+            </div>
+
+            <div class="yoga-cards-grid">
+              <!-- Card 01 -->
+              <div class="yoga-style-card reveal-scale delay-100" style="position: relative">
+                <div class="motion-badge badge-scale" style="top: -12px; left: 10px">
+                  <i class="fa-solid fa-expand"></i> SCALE-UP • DELAY: 100ms
+                </div>
+                <div class="yoga-watermark-text">SEM 1</div>
+                <div class="card-top-indicator">
+                  <span class="card-num-badge">01</span>
+                  <span class="card-sem-sub">Semester 1</span>
+                </div>
+                <div class="yoga-pose-img-wrap">
+                  <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=600&q=80" alt="Filosofi Pendidikan" class="yoga-pose-img" />
+                </div>
+                <a href="#materi-blueprint" class="yoga-card-pill-btn">
+                  <span>Filosofi Pendidikan &amp; Nilai</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <!-- Card 02 -->
+              <div class="yoga-style-card reveal-scale delay-150" style="position: relative">
+                <div class="motion-badge badge-delay" style="top: -12px; left: 10px">
+                  <i class="fa-solid fa-clock"></i> DELAY: 150ms
+                </div>
+                <div class="yoga-watermark-text">SEM 1</div>
+                <div class="card-top-indicator">
+                  <span class="card-num-badge">02</span>
+                  <span class="card-sem-sub">Semester 1</span>
+                </div>
+                <div class="yoga-pose-img-wrap">
+                  <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Pembelajaran Mendalam" class="yoga-pose-img" />
+                </div>
+                <a href="#materi-blueprint" class="yoga-card-pill-btn">
+                  <span>Pembelajaran Mendalam &amp; Asesmen Dasar</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <!-- Card 03 -->
+              <div class="yoga-style-card reveal-scale delay-200" style="position: relative">
+                <div class="motion-badge badge-delay" style="top: -12px; left: 10px">
+                  <i class="fa-solid fa-clock"></i> DELAY: 200ms
+                </div>
+                <div class="yoga-watermark-text">SEM 1</div>
+                <div class="card-top-indicator">
+                  <span class="card-num-badge">03</span>
+                  <span class="card-sem-sub">Semester 1</span>
+                </div>
+                <div class="yoga-pose-img-wrap">
+                  <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Peserta Didik" class="yoga-pose-img" />
+                </div>
+                <a href="#materi-blueprint" class="yoga-card-pill-btn">
+                  <span>Pemahaman Tentang Peserta Didik</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <!-- Card 04 -->
+              <div class="yoga-style-card reveal-scale delay-250" style="position: relative">
+                <div class="motion-badge badge-delay" style="top: -12px; left: 10px">
+                  <i class="fa-solid fa-clock"></i> DELAY: 250ms
+                </div>
+                <div class="yoga-watermark-text">SEM 1</div>
+                <div class="card-top-indicator">
+                  <span class="card-num-badge">04</span>
+                  <span class="card-sem-sub">Semester 1</span>
+                </div>
+                <div class="yoga-pose-img-wrap">
+                  <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" alt="Pembelajaran Kreatif" class="yoga-pose-img" />
+                </div>
+                <a href="#materi-blueprint" class="yoga-card-pill-btn">
+                  <span>Pembelajaran Kreatif Inovatif</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <!-- Card 05 -->
+              <div class="yoga-style-card reveal-scale delay-300" style="position: relative">
+                <div class="motion-badge badge-delay" style="top: -12px; left: 10px">
+                  <i class="fa-solid fa-clock"></i> DELAY: 300ms
+                </div>
+                <div class="yoga-watermark-text">SEM 1</div>
+                <div class="card-top-indicator">
+                  <span class="card-num-badge">05</span>
+                  <span class="card-sem-sub">Semester 1</span>
+                </div>
+                <div class="yoga-pose-img-wrap">
+                  <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=600&q=80" alt="Growth Mindset" class="yoga-pose-img" />
+                </div>
+                <a href="#materi-blueprint" class="yoga-card-pill-btn">
+                  <span>Pola Berpikir Bertumbuh</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <!-- Card 06 -->
+              <div class="yoga-style-card reveal-scale delay-350" style="position: relative">
+                <div class="motion-badge badge-delay" style="top: -12px; left: 10px">
+                  <i class="fa-solid fa-clock"></i> DELAY: 350ms
+                </div>
+                <div class="yoga-watermark-text">SEM 1</div>
+                <div class="card-top-indicator">
+                  <span class="card-num-badge">06</span>
+                  <span class="card-sem-sub">Semester 1</span>
+                </div>
+                <div class="yoga-pose-img-wrap">
+                  <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="PPL Terbimbing" class="yoga-pose-img" />
+                </div>
+                <a href="#materi-blueprint" class="yoga-card-pill-btn">
+                  <span>PPL Terbimbing</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SECTION 5: AGENDA & DOKUMEN SEMINAR REVEAL BLUEPRINT
+           ========================================================================= -->
+      <section class="events-schedule-section blueprint-container" id="agenda-blueprint">
+        <div class="container">
+          <!-- Flow Explanation Card -->
+          <div class="section-flow-card">
+            <div class="flow-meta">
+              <span class="flow-step-tag">SECTION 05 • INTERACTIVE SPOTLIGHT &amp; ARROW DISPLACEMENT</span>
+              <h2 class="flow-title">Dokumen Seminar: 4 Baris Berjenjang &amp; Sorotan Spotlight Horizontal</h2>
+              <p class="flow-desc">Setiap baris dokumen muncul vertikal dengan jeda 100ms. Ketika kursor disorotkan, muncul lapisan spotlight putih berkilau, baris bergeser 10px ke kanan, dan ikon panah meluncur 6px.</p>
+            </div>
+            <div class="timeline-pills-row">
+              <div class="time-node">
+                <span class="time-label">01. Visi</span>
+                <span class="time-action">Delay 100ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">02. Sem 1</span>
+                <span class="time-action">Delay 200ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">03. Sem 2</span>
+                <span class="time-action">Delay 300ms</span>
+              </div>
+              <span class="time-arrow">→</span>
+              <div class="time-node">
+                <span class="time-label">04. Karya</span>
+                <span class="time-action">Delay 400ms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="events-list-wrapper">
+            <!-- 01. Visi Pribadi -->
+            <div class="event-row-item reveal-fade-up delay-100" style="position: relative">
+              <div class="motion-badge badge-delay" style="top: 8px; right: 20px">
+                <i class="fa-solid fa-wand-magic"></i> SPOTLIGHT HOVER + ARROW +6px
+              </div>
+              <span class="event-number">01</span>
+              <h3 class="event-title">Visi Pribadi<br />Pendidik</h3>
+              <p class="event-details">Filosofi mengajar Ki Hadjar Dewantara, komitmen etis, dan cita-cita menjadi guru profesional reflektif masa depan.<br />[Dokumen Visi &amp; Komitmen Guru]</p>
+              <div>
+                <a href="visi.html" class="btn-pill-reserve">
+                  <span>Lihat Visi</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- 02. Refleksi Semester 1 -->
+            <div class="event-row-item reveal-fade-up delay-200" style="position: relative">
+              <div class="motion-badge badge-delay" style="top: 8px; right: 20px">
+                <i class="fa-solid fa-clock"></i> DELAY: 200ms
+              </div>
+              <span class="event-number">02</span>
+              <h3 class="event-title">Refleksi<br />Semester 1</h3>
+              <p class="event-details">Sintesis komprehensif 6 mata kuliah fondasi dan evaluasi kritis pengalaman awal PPL Terbimbing di sekolah mitra.<br />[Jurnal Refleksi Kritis Sem 1]</p>
+              <div>
+                <a href="sem1.html" class="btn-pill-reserve">
+                  <span>Lihat Refleksi</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- 03. Refleksi Semester 2 -->
+            <div class="event-row-item reveal-fade-up delay-300" style="position: relative">
+              <div class="motion-badge badge-delay" style="top: 8px; right: 20px">
+                <i class="fa-solid fa-clock"></i> DELAY: 300ms
+              </div>
+              <span class="event-number">03</span>
+              <h3 class="event-title">Refleksi<br />Semester 2</h3>
+              <p class="event-details">Evaluasi mendalam pembelajaran sosial emosional, projek kepemimpinan komunitas, dan praktik PPL Mandiri penuh.<br />[Jurnal Refleksi Kritis Sem 2]</p>
+              <div>
+                <a href="sem2.html" class="btn-pill-reserve">
+                  <span>Lihat Refleksi</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- 04. Karya Inovasi -->
+            <div class="event-row-item reveal-fade-up delay-400" style="position: relative">
+              <div class="motion-badge badge-delay" style="top: 8px; right: 20px">
+                <i class="fa-solid fa-clock"></i> DELAY: 400ms
+              </div>
+              <span class="event-number">04</span>
+              <h3 class="event-title">Karya Inovasi<br />Pembelajaran</h3>
+              <p class="event-details">Artefak modul ajar berdiferensiasi, produk media digital interaktif berbasis TPACK, serta dokumentasi gelar karya.<br />[Kompilasi Artefak Inovatif]</p>
+              <div>
+                <a href="karya.html" class="btn-pill-reserve">
+                  <span>Lihat Inovasi</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contact" style="padding-bottom: 60px">
+      <div class="container">
+        <div class="footer-top-meta">
+          <p class="footer-copyright-text">&copy; 2026 Retno Kumala Sari, S.Pd.,M.Pd • Panduan Animasi Reveal On-Scroll PPG Calon Guru UNY.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+      // =========================================================================
+      // BLUEPRINT CONTROLS: TOGGLE TRAILS, REPLAY & SPEED
+      // =========================================================================
+      let trailsActive = true;
+      let currentSpeed = 1.0;
+
+      function toggleBlueprintTrails() {
+        trailsActive = !trailsActive;
+        const btn = document.getElementById("toggleTrailsBtn");
+        if (trailsActive) {
+          document.body.classList.remove("hide-blueprint");
+          btn.classList.add("active");
+          btn.querySelector("span").textContent = "Anotasi & Trails (ON)";
+        } else {
+          document.body.classList.add("hide-blueprint");
+          btn.classList.remove("active");
+          btn.querySelector("span").textContent = "Anotasi & Trails (OFF)";
+        }
+      }
+
+      function replayAllAnimations() {
+        const revealElements = document.querySelectorAll(
+          ".reveal-fade-up, .reveal-fade-left, .reveal-fade-right, .reveal-scale"
+        );
+        const countUps = document.querySelectorAll(".count-up");
+        const progressBars = document.querySelectorAll(".calorie-progress-fill");
+
+        // Remove revealed state
+        revealElements.forEach((el) => el.classList.remove("is-revealed"));
+        countUps.forEach((el) => {
+          el.dataset.counted = "false";
+          el.textContent = "0";
+        });
+        progressBars.forEach((bar) => {
+          bar.dataset.animated = "false";
+          bar.style.width = "0%";
+        });
+
+        // Trigger reflow & re-observe
+        setTimeout(() => {
+          revealElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              el.classList.add("is-revealed");
+              const c = el.classList.contains("count-up") ? [el] : el.querySelectorAll(".count-up");
+              c.forEach(animateCountUp);
+              const p = el.querySelectorAll(".calorie-progress-fill");
+              p.forEach(animateProgressBar);
+            }
+          });
+        }, 100);
+      }
+
+      function cycleSpeedMode() {
+        const label = document.getElementById("speedLabel");
+        if (currentSpeed === 1.0) {
+          currentSpeed = 0.5;
+          document.body.classList.remove("speed-slowest");
+          document.body.classList.add("speed-slow");
+          label.textContent = "Kecepatan: 0.5x (Lambat)";
+        } else if (currentSpeed === 0.5) {
+          currentSpeed = 0.25;
+          document.body.classList.remove("speed-slow");
+          document.body.classList.add("speed-slowest");
+          label.textContent = "Kecepatan: 0.25x (Super Lambat)";
+        } else {
+          currentSpeed = 1.0;
+          document.body.classList.remove("speed-slow", "speed-slowest");
+          label.textContent = "Kecepatan: 1.0x (Normal)";
+        }
+      }
+
+      // Count-Up Animation
+      function animateCountUp(element) {
+        if (element.dataset.counted === "true") return;
+        element.dataset.counted = "true";
+
+        const target = parseFloat(element.getAttribute("data-target")) || 0;
+        const decimals = parseInt(element.getAttribute("data-decimals") || "0", 10);
+        const suffix = element.getAttribute("data-suffix") || "";
+        const prefix = element.getAttribute("data-prefix") || "";
+        const duration = 1800 / currentSpeed;
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const currentValue = easeProgress * target;
+
+          element.textContent = prefix + currentValue.toFixed(decimals) + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            element.textContent = prefix + target.toFixed(decimals) + suffix;
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+      }
+
+      // Progress Bar Animation
+      function animateProgressBar(bar) {
+        if (bar.dataset.animated === "true") return;
+        bar.dataset.animated = "true";
+
+        const target = bar.getAttribute("data-progress") || "96";
+        bar.style.transition = `width ${1.6 / currentSpeed}s cubic-bezier(0.16, 1, 0.3, 1)`;
+        bar.style.width = target + "%";
+      }
+
+      // Scroll-Linked Rotation for Sunbursts
+      const sunburstIcons = document.querySelectorAll(".sunburst-icon");
+      let scrollTicking = false;
+
+      function updateScrollRotation() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        sunburstIcons.forEach((icon, index) => {
+          const direction = index % 2 === 0 ? 1 : -1;
+          const rotation = (scrollY * 0.22 * direction) % 360;
+          icon.style.transform = `rotate(${rotation.toFixed(2)}deg)`;
+        });
+        scrollTicking = false;
+      }
+
+      window.addEventListener("scroll", () => {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(updateScrollRotation);
+          scrollTicking = true;
+        }
+      }, { passive: true });
+
+      // 3D Gyroscope Tilt for Organ Cards
+      const organCards = document.querySelectorAll(".organ-mini-card");
+      organCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -12;
+          const rotateY = ((x - centerX) / centerX) * 12;
+
+          card.style.transform = `perspective(700px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.035, 1.035, 1.035)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1, 1, 1)";
+        });
+      });
+
+      // IntersectionObserver Initialization
+      document.addEventListener("DOMContentLoaded", () => {
+        updateScrollRotation();
+
+        const revealElements = document.querySelectorAll(
+          ".reveal-fade-up, .reveal-fade-left, .reveal-fade-right, .reveal-scale"
+        );
+
+        if ("IntersectionObserver" in window) {
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -40px 0px"
+          };
+
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-revealed");
+
+                const countUps = entry.target.classList.contains("count-up")
+                  ? [entry.target]
+                  : entry.target.querySelectorAll(".count-up");
+                countUps.forEach(animateCountUp);
+
+                const progressBars = entry.target.querySelectorAll(".calorie-progress-fill");
+                progressBars.forEach(animateProgressBar);
+
+                obs.unobserve(entry.target);
+              }
+            });
+          }, observerOptions);
+
+          revealElements.forEach((el) => observer.observe(el));
+        } else {
+          revealElements.forEach((el) => {
+            el.classList.add("is-revealed");
+            el.querySelectorAll(".count-up").forEach(animateCountUp);
+            el.querySelectorAll(".calorie-progress-fill").forEach(animateProgressBar);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
