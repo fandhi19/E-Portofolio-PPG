@@ -3,35 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karya Inovasi Pembelajaran | Retno Kumala Sari, S.Pd.,M.Pd — PPG Calon Guru UNY</title>
-    <meta name="description" content="Karya Inovasi, Modul Ajar Berdiferensiasi, & Media Pembelajaran Digital - Retno Kumala Sari, S.Pd.,M.Pd, PPG Calon Guru UNY 2026." />
-
-    <link rel="shortcut icon" href="images/Logo Uny outlitne.png" type="image/x-icon" />
-
-    <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
+    <title>Karya Inovasi (LK 4) - VOLI MINI | Seminar PPG Retno Kumala Sari</title>
+    <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Caveat:wght@600&display=swap" rel="stylesheet" />
-
-    <!-- FontAwesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-    <!-- Main Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
-    <!-- SVG Sunburst Definition -->
-    <svg style="display: none">
+    <!-- SVG Definitions for Reusable Sunburst Icons -->
+    <svg style="display: none" aria-hidden="true">
       <defs>
         <g id="sunburst-shape">
-          <circle cx="50" cy="50" r="14" fill="none" stroke="currentColor" stroke-width="2.5" />
-          <line x1="50" y1="30" x2="50" y2="6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-          <line x1="50" y1="70" x2="50" y2="94" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-          <line x1="30" y1="50" x2="6" y2="50" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
-          <line x1="70" y1="50" x2="94" y2="50" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <!-- 8 Main spokes -->
+          <line x1="50" y1="20" x2="50" y2="4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="50" y1="80" x2="50" y2="96" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="20" y1="50" x2="4" y2="50" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="80" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <!-- 8 Diagonal spokes -->
           <line x1="36" y1="36" x2="19" y2="19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
           <line x1="64" y1="64" x2="81" y2="81" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="36" y1="64" x2="19" y2="81" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <line x1="64" y1="36" x2="81" y2="19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+          <!-- 8 Angled spokes -->
+          <line x1="42" y1="32" x2="33" y2="11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="58" y1="68" x2="67" y2="89" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="58" y1="32" x2="67" y2="11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="42" y1="68" x2="33" y2="89" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="32" y1="42" x2="11" y2="33" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="68" y1="58" x2="89" y2="67" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="32" y1="58" x2="11" y2="67" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <line x1="68" y1="42" x2="89" y2="33" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
         </g>
       </defs>
     </svg>
@@ -46,168 +50,841 @@
           <span>SEMINAR PPG</span>
         </a>
 
-        <nav class="nav-links">
-          <a href="index.html" class="nav-link">BERANDA</a>
-          <a href="visi.html" class="nav-link">VISI PRIBADI</a>
-          <a href="sem1.html" class="nav-link">REFLEKSI SEM 1</a>
-          <a href="sem2.html" class="nav-link">REFLEKSI SEM 2</a>
-          <a href="karya.html" class="nav-link active">KARYA INOVASI</a>
+        <!-- Menu Navigasi (Desktop Capsule / Mobile Offcanvas Glass Menu) -->
+        <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">
+            <span>BERANDA</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="visi.html" class="nav-link">
+            <span>VISI PRIBADI</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="sem1.html" class="nav-link">
+            <span>REFLEKSI SEM 1</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="sem2.html" class="nav-link">
+            <span>REFLEKSI SEM 2</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="refleksi.html" class="nav-link">
+            <span>REFLEKSI PPG</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="karya.html" class="nav-link active">
+            <span>KARYA INOVASI</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+
+          <!-- Mobile Only CTA inside Drawer -->
+          <div class="mobile-nav-cta">
+            <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn mobile-cta-full">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>LIHAT PORTOFOLIO PPL</span>
+            </a>
+          </div>
         </nav>
 
-        <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          <span>LIHAT PORTOFOLIO PPL</span>
-        </a>
+        <!-- Right Side: Desktop CTA & Hamburger Button -->
+        <div class="nav-actions-group">
+          <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn desktop-only-btn">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>LIHAT PORTOFOLIO PPL</span>
+          </a>
+
+          <!-- Hamburger Toggle Button (Mobile & Tablet) -->
+          <button class="nav-toggle-btn" id="navToggleBtn" type="button" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
     </header>
 
+    <!-- Backdrop for Mobile / Tablet Menu -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
     <!-- ==========================================================================
-         MAIN CONTENT: KARYA INOVASI PEMBELAJARAN
+         MAIN CONTENT: KARYA INOVASI PEMBELAJARAN (LK 4)
          ========================================================================== -->
     <main class="subpage-main">
       <div class="container">
         <!-- Page Intro Banner -->
         <div class="page-intro-banner reveal-fade-up">
           <div>
-            <span class="tag-system-updates"><i class="fa-solid fa-wand-magic-sparkles"></i> PRODUK &amp; ARTEFAK UNGGULAN SEMINAR</span>
+            <span class="tag-system-updates"><i class="fa-solid fa-volleyball"></i> LEMBAR KERJA 4 (LK 4) • PENYUSUNAN DESAIN KARYA INOVATIF</span>
           </div>
-          <h1>Karya Inovasi &amp; <span class="text-italic-accent">teknologi.</span></h1>
+          <h1>
+            VOLI MINI &amp; Desain Karya <span class="text-italic-accent">inovatif.</span>
+          </h1>
           <p>
-            Kompilasi artefak pembelajaran unggulan: modul ajar berbasis Kurikulum Merdeka, media pembelajaran digital interaktif berpendekatan TPACK, instrumen asesmen autentik, serta produk nyata dari Gelar Karya PPL dan Projek
-            Kepemimpinan.
+            Media Interaktif Pembelajaran Kognitif Bola Voli Berbasis Analisis Video dan Studi Kasus Pertandingan serta Integrasi Pembelajaran Sosial Emosional (PSE) untuk Murid Kelas XII SMA — Retno Kumala Sari, S.Pd.,M.Pd.
           </p>
         </div>
 
-        <!-- 4 Inovasi Unggulan Detail Cards -->
-        <div style="display: flex; flex-direction: column; gap: 36px">
-          <!-- Inovasi 1: Modul Ajar Berdiferensiasi -->
-          <div class="card-glass-block reveal-fade-up delay-100">
-            <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center">
+        <!-- ======================================================================
+             HERO SPOTLIGHT CARD: IDENTITAS DESAIN KARYA INOVATIF
+             ====================================================================== -->
+        <div class="turning-point-spotlight reveal-fade-up delay-100" style="margin-bottom: 40px">
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap">
+            <span class="volimini-hero-badge"><i class="fa-solid fa-star"></i> DESAIN KARYA INOVATIF UNGGULAN</span>
+            <span class="sem-count-tag" style="background: rgba(255, 255, 255, 0.12); color: #ffffff; border-color: rgba(255, 255, 255, 0.25)">
+              <i class="fa-solid fa-file-pdf"></i> Dokumen Resmi LK 4 (6 Halaman)
+            </span>
+            <span class="sem-count-tag" style="background: rgba(255, 255, 255, 0.12); color: #ffffff; border-color: rgba(255, 255, 255, 0.25)">
+              <i class="fa-solid fa-school"></i> Kelas XII SMA • PJOK
+            </span>
+          </div>
+
+          <h2 style="font-size: clamp(1.6rem, 3.2vw, 2.35rem); font-weight: 800; line-height: 1.25; margin-bottom: 12px; color: #ffffff">
+            VOLI MINI: Media Interaktif Pembelajaran Kognitif Bola Voli
+          </h2>
+          <p style="font-size: 0.96rem; color: #cbd5e1; line-height: 1.7; max-width: 980px; margin-bottom: 22px">
+            Inovasi pembelajaran PJOK yang menjembatani kesenjangan antara teori kognitif dan aksi praktik lapangan: murid menganalisis video biomekanika teknik, memecahkan studi kasus situasi pertandingan nyata, serta mengasah 5 kompetensi sosial-emosional CASEL (kesadaran diri, pengelolaan diri, kesadaran sosial, keterampilan berelasi, dan pengambilan keputusan bertanggung jawab) secara terintegrasi melalui gawai.
+          </p>
+
+          <!-- Feature Pills -->
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px">
+            <span class="volimini-feature-pill"><i class="fa-solid fa-video"></i> Analisis Video Gerak Benar &amp; Salah</span>
+            <span class="volimini-feature-pill"><i class="fa-solid fa-chess-board"></i> Studi Kasus Taktik &amp; Rotasi 6 Posisi</span>
+            <span class="volimini-feature-pill"><i class="fa-solid fa-layer-group"></i> Kuis Bertingkat Bloom (C2, C3, C4)</span>
+            <span class="volimini-feature-pill"><i class="fa-solid fa-heart-pulse"></i> Integrasi 5 Pilar PSE CASEL</span>
+            <span class="volimini-feature-pill"><i class="fa-solid fa-cloud-sun"></i> Ritual Emosional Cuaca Hati</span>
+            <span class="volimini-feature-pill"><i class="fa-solid fa-mobile-screen-button"></i> Canva, Genially &amp; Quizizz</span>
+          </div>
+
+          <!-- Quick Identitas Meta Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; background: rgba(255, 255, 255, 0.07); padding: 18px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.12)">
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: #94a3b8; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px">Nama Karya Inovasi</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #ffffff">VOLI MINI (Media Interaktif Bola Voli &amp; PSE)</div>
+            </div>
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: #94a3b8; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px">Sasaran &amp; Fasilitator</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #ffffff">Murid Kelas XII SMA (Guru PJOK sebagai Fasilitator)</div>
+            </div>
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: #94a3b8; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 3px">Kesesuaian Kurikulum</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #ffffff">Kurikulum Merdeka (Elemen Pengetahuan Gerak &amp; Konsep)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Targets Row -->
+        <div class="stat-reflection-grid reveal-fade-up delay-150">
+          <div class="stat-reflection-card">
+            <div class="stat-icon" style="background: rgba(37, 99, 235, 0.12); color: #2563eb">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="stat-num count-up" data-target="80" data-suffix="%">0%</div>
+            <div class="stat-label">Target Ketuntasan KKTP Kognitif Murid</div>
+          </div>
+
+          <div class="stat-reflection-card">
+            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <div class="stat-num count-up" data-target="4">0</div>
+            <div class="stat-label">Bagian Prototipe Interaktif VOLI MINI</div>
+          </div>
+
+          <div class="stat-reflection-card">
+            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.14); color: #d97706">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="stat-num count-up" data-target="4">0</div>
+            <div class="stat-label">Tahapan Pertemuan Skenario Penerapan</div>
+          </div>
+
+          <div class="stat-reflection-card">
+            <div class="stat-icon" style="background: rgba(139, 92, 246, 0.12); color: #7c3aed">
+              <i class="fa-solid fa-face-smile"></i>
+            </div>
+            <div class="stat-num count-up" data-target="75" data-suffix="%">0%</div>
+            <div class="stat-label">Target Zona Emosi Positif Murid (PSE)</div>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             BAGIAN 1: IDENTIFIKASI KEBUTUHAN DAN TANTANGAN PEMBELAJARAN
+             ====================================================================== -->
+        <div style="margin: 45px 0 24px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--slate-blue)">INDIKATOR 01</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Asesmen Kebutuhan &amp; Tantangan Lapangan</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            Identifikasi Kebutuhan &amp; Tantangan Pembelajaran
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Hasil observasi mendalam pada pembelajaran bola voli kelas XII SMA serta pemetaan tantangan psikososial murid menjelang kelulusan.
+          </p>
+        </div>
+
+        <!-- 2 Kolom Komparasi Kebutuhan Kognitif vs Tantangan PSE -->
+        <div class="transformation-comparison-grid reveal-fade-up delay-200">
+          <!-- Kolom 1: Kebutuhan Kognitif Pembelajaran Bola Voli -->
+          <div class="trans-col-box trans-col-before" style="background: rgba(239, 246, 255, 0.65); border-color: rgba(147, 197, 253, 0.6)">
+            <div class="trans-header-title">
+              <div style="width: 42px; height: 42px; border-radius: 12px; background: rgba(37, 99, 235, 0.15); color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 1.2rem">
+                <i class="fa-solid fa-volleyball"></i>
+              </div>
               <div>
-                <span class="sem-badge-pill" style="margin-bottom: 14px; display: inline-block">INOVASI PEDAGOGIK</span>
-                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 14px; line-height: 1.2">Modul Ajar Berdiferensiasi Berbasis Understanding by Design (UbD)</h2>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px">
-                  Perancangan perangkat ajar komprehensif yang mengintegrasikan diferensiasi konten, proses, dan produk. Dilengkapi panduan fasilitasi untuk siswa berkemampuan awal rendah, sedang, maupun tinggi dengan scaffolding
-                  terstruktur.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px">
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Telah diuji cobakan pada 4 siklus mengajar PPL Mandiri</span>
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Meningkatkan ketuntasan belajar murid hingga <strong class="count-up" data-target="96.4" data-decimals="1" data-suffix="%">0.0%</strong></span>
-                  </div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--deep-navy)">Kebutuhan Aspek Kognitif PJOK</h3>
+                <span style="font-size: 0.78rem; color: #2563eb; font-weight: 700">5 Permasalahan Kognitif Pembelajaran Bola Voli</span>
+              </div>
+            </div>
+
+            <ul class="trans-list-items">
+              <li>
+                <i class="fa-solid fa-circle-exclamation" style="color: #2563eb"></i>
+                <div>
+                  <strong>Dominasi Praktik Fisik Teknis:</strong> Pembelajaran masih berfokus pada pengulangan gerakan motorik, sedangkan pemahaman konsep teknik, peraturan resmi, formasi, dan taktik strategi permainan kurang mendapat porsi terencana.
                 </div>
-                <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="btn-pill-dark">
-                  <span>Unduh Modul Ajar Lengkap</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-              <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--glass-shadow-lg); height: 320px">
-                <img src="images/Foto_bareng.jpeg" alt="Praktik Implementasi Modul Ajar Berdiferensiasi" style="width: 100%; height: 100%; object-fit: cover" />
-              </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation" style="color: #2563eb"></i>
+                <div>
+                  <strong>Sulit Menjelaskan Prinsip Gerak:</strong> Murid mampu melakukan gerakan tetapi kesulitan menjelaskan alasan mekanika tubuh di balik gerak (misalnya sudut perkenaan lengan saat passing bawah atau timing ayunan lompatan smash).
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation" style="color: #2563eb"></i>
+                <div>
+                  <strong>Rendahnya Pemahaman Peraturan &amp; Rotasi:</strong> Pemahaman formasi dan rotasi 6 posisi masih lemah, sehingga sering terjadi kesalahan posisi pemain dan kebingungan rotasi saat pertandingan berlangsung.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation" style="color: #2563eb"></i>
+                <div>
+                  <strong>Waktu Tatap Muka Terbatas:</strong> Jam pelajaran PJOK di lapangan sangat terbatas untuk membedah teori mendalam, meninjau kesalahan taktis, atau memberikan umpan balik personal.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation" style="color: #2563eb"></i>
+                <div>
+                  <strong>Buku Teks Kurang Kontekstual:</strong> Sumber belajar teks konvensional kurang menarik bagi murid generasi digital dan belum terhubung dengan tayangan video pertandingan nyata.
+                </div>
+              </li>
+            </ul>
+
+            <div style="margin-top: 18px; padding: 12px 16px; background: rgba(37, 99, 235, 0.08); border-radius: 12px; font-size: 0.86rem; color: var(--deep-navy)">
+              <strong>Kebutuhan Solusi:</strong> Media belajar kognitif interaktif yang menarik, dapat diakses mandiri melalui gawai <em>(smartphone/tablet)</em>, kontekstual, dan terkoneksi langsung dengan praktik di lapangan.
             </div>
           </div>
 
-          <!-- Inovasi 2: Media Digital Interaktif -->
-          <div class="card-glass-block reveal-fade-up delay-150">
-            <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center">
-              <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--glass-shadow-lg); height: 320px">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Media Digital Interaktif TPACK" style="width: 100%; height: 100%; object-fit: cover" />
+          <!-- Kolom 2: Tantangan Sosial Emosional (PSE) Murid Kelas XII -->
+          <div class="trans-col-box trans-col-after" style="background: rgba(250, 245, 255, 0.65); border-color: rgba(216, 180, 254, 0.6)">
+            <div class="trans-header-title">
+              <div style="width: 42px; height: 42px; border-radius: 12px; background: rgba(139, 92, 246, 0.15); color: #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 1.2rem">
+                <i class="fa-solid fa-heart-pulse"></i>
               </div>
               <div>
-                <span class="sem-badge-pill" style="margin-bottom: 14px; display: inline-block; background: var(--slate-blue)">INOVASI TEKNOLOGI</span>
-                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 14px; line-height: 1.2">Media Pembelajaran Digital Interaktif Berpendekatan TPACK</h2>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px">
-                  Pengembangan media visual dan simulasi komputasional yang memudahkan visualisasi konsep abstrak. Menghadirkan gamifikasi edukatif yang memacu rasa ingin tahu dan nalar kritis siswa tanpa mengabaikan aspek keamanan digital.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px">
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Dapat diakses lintas perangkat (laptop, tablet, &amp; smartphone)</span>
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Tersinkronisasi dengan asesmen formatif instan</span>
-                  </div>
-                </div>
-                <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="btn-pill-dark">
-                  <span>Demonstrasi Media Digital</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--deep-navy)">Tantangan Sosial-Emosional (PSE)</h3>
+                <span style="font-size: 0.78rem; color: #7c3aed; font-weight: 700">Kondisi Psikososial Murid Kelas XII SMA</span>
               </div>
+            </div>
+
+            <ul class="trans-list-items">
+              <li>
+                <i class="fa-solid fa-shield-heart" style="color: #7c3aed"></i>
+                <div>
+                  <strong>Tekanan Akademik Menjelang Ujian:</strong> Murid kelas XII menghadapi beban persiapan kelulusan dan seleksi masuk perguruan tinggi, sehingga rentan cemas, stres, dan motivasi belajarnya mudah turun.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-heart" style="color: #7c3aed"></i>
+                <div>
+                  <strong>Takut Salah &amp; Ragu Berpendapat:</strong> Sebagian murid merasa cemas, malu, atau takut diejek saat diminta menjelaskan analisis gerak atau menyampaikan pendapat taktis di depan teman.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-heart" style="color: #7c3aed"></i>
+                <div>
+                  <strong>Kerja Sama &amp; Dukungan Sebaya Terbatas:</strong> Diskusi kelompok saat merancang strategi bermain masih didominasi segelintir anak; budaya saling mendukung belum merata.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-heart" style="color: #7c3aed"></i>
+                <div>
+                  <strong>Nihilnya Ruang Rutin Refleksi Emosi:</strong> Belum pernah ada ruang terstruktur untuk mengenali kondisi perasaan dan merefleksikan emosi selama jam pelajaran olahraga berlangsung.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-shield-heart" style="color: #7c3aed"></i>
+                <div>
+                  <strong>Kebutuhan 5 Pilar CASEL:</strong> Memerlukan wadah untuk melatih kesadaran diri, pengelolaan diri, kesadaran sosial, keterampilan berelasi, serta pengambilan keputusan bertanggung jawab.
+                </div>
+              </li>
+            </ul>
+
+            <div style="margin-top: 18px; padding: 12px 16px; background: rgba(139, 92, 246, 0.08); border-radius: 12px; font-size: 0.86rem; color: var(--deep-navy)">
+              <strong>Kebutuhan Tambahan:</strong> Media kognitif yang memfasilitasi 5 kompetensi sosial-emosional CASEL agar murid merasa aman, nyaman, termotivasi, dan berani berpikir kritis.
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             BAGIAN 2: PERUMUSAN GAGASAN KREATIF & TUJUAN INOVASI
+             ====================================================================== -->
+        <div style="margin: 50px 0 24px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--slate-blue)">INDIKATOR 02</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Gagasan Kreatif Solutif &amp; Tujuan</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            Perumusan Gagasan &amp; Tujuan Inovasi VOLI MINI
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Konseptualisasi media interaktif VOLI MINI melalui 3 aktivitas inti dan integrasi terencana Pembelajaran Sosial Emosional (PSE).
+          </p>
+        </div>
+
+        <!-- 3 Pilar Kegiatan Utama VOLI MINI -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; margin-bottom: 36px" class="reveal-fade-up delay-200">
+          <!-- Pilar 1 -->
+          <div class="c-card-item" style="padding: 26px; border-radius: 22px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(37, 99, 235, 0.12); color: #2563eb; width: 42px; height: 42px; font-size: 1.15rem">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <div>
+                <span style="font-size: 0.74rem; font-weight: 800; color: #2563eb; text-transform: uppercase">Kegiatan Utama 1</span>
+                <h3 class="c-card-title" style="font-size: 1.15rem">Analisis Cuplikan Video Teknik</h3>
+              </div>
+            </div>
+            <p class="c-card-text" style="font-size: 0.9rem; line-height: 1.65; margin-bottom: 14px">
+              Murid mengamati cuplikan video gerak benar dan salah pada passing, servis, smash, dan blok. Murid menandai kesalahan mekanika gerak dan menjelaskan prinsip ilmiah biomekanika.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.8); border-left: 3px solid #2563eb; padding: 10px 14px; border-radius: 8px; font-size: 0.84rem; color: var(--deep-navy)">
+              <strong>Integrasi PSE:</strong> Dikerjakan berpasangan dengan aturan umpan balik positif (3 kalimat apresiatif) guna mengasah <em>keterampilan berelasi</em> dan <em>kesadaran sosial</em>.
             </div>
           </div>
 
-          <!-- Inovasi 3: Asesmen Otentik & Diagnostik -->
-          <div class="card-glass-block reveal-fade-up delay-200">
-            <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center">
+          <!-- Pilar 2 -->
+          <div class="c-card-item" style="padding: 26px; border-radius: 22px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669; width: 42px; height: 42px; font-size: 1.15rem">
+                <i class="fa-solid fa-chess-knight"></i>
+              </div>
               <div>
-                <span class="sem-badge-pill" style="margin-bottom: 14px; display: inline-block">EVALUASI PEMBELAJARAN</span>
-                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 14px; line-height: 1.2">Paket Asesmen Diagnostik Kognitif-Nonkognitif &amp; Portofolio</h2>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px">
-                  Instrumen asesmen awal terstandar untuk memetakan kesiapan, minat, dan kondisi emosional murid sebelum pembelajaran dimulai, dipadukan dengan rubrik penilaian portofolio unjuk kerja autentik.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px">
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Dilengkapi panduan tindak lanjut hasil diagnostik</span>
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Format rubrik penilaian analitik dan holistik</span>
-                  </div>
-                </div>
-                <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="btn-pill-dark">
-                  <span>Lihat Format Asesmen</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <span style="font-size: 0.74rem; font-weight: 800; color: #059669; text-transform: uppercase">Kegiatan Utama 2</span>
+                <h3 class="c-card-title" style="font-size: 1.15rem">Studi Kasus Situasi Pertandingan</h3>
               </div>
-              <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--glass-shadow-lg); height: 320px">
-                <img src="images/evaluasi.jpeg" alt="Asesmen Otentik dan Evaluasi" style="width: 100%; height: 100%; object-fit: cover" />
-              </div>
+            </div>
+            <p class="c-card-text" style="font-size: 0.9rem; line-height: 1.65; margin-bottom: 14px">
+              Menghadirkan skenario simulasi pertandingan kontekstual: kondisi skor kritis <em>deuce</em>, rotasi penerimaan bola, dan penentuan taktik menyerang atau bertahan secara situasional.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.8); border-left: 3px solid #059669; padding: 10px 14px; border-radius: 8px; font-size: 0.84rem; color: var(--deep-navy)">
+              <strong>Integrasi PSE:</strong> Melatih <em>pengambilan keputusan yang bertanggung jawab</em> dengan mempertimbangkan dampak bagi diri, keselamatan kawan setim, dan sportivitas lawan.
             </div>
           </div>
 
-          <!-- Inovasi 4: Produk Gelar Karya Projek Kepemimpinan -->
-          <div class="card-glass-block reveal-fade-up delay-250">
-            <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center">
-              <div style="border-radius: 28px; overflow: hidden; box-shadow: var(--glass-shadow-lg); height: 320px">
-                <img src="images/ganteng.png" alt="Produk Gelar Karya Projek Kepemimpinan" style="width: 100%; height: 100%; object-fit: cover" />
+          <!-- Pilar 3 -->
+          <div class="c-card-item" style="padding: 26px; border-radius: 22px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(245, 158, 11, 0.14); color: #d97706; width: 42px; height: 42px; font-size: 1.15rem">
+                <i class="fa-solid fa-trophy"></i>
               </div>
               <div>
-                <span class="sem-badge-pill" style="margin-bottom: 14px; display: inline-block">DAMPAK KOMUNITAS</span>
-                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 14px; line-height: 1.2">Laporan &amp; Produk Gelar Karya Projek Kepemimpinan</h2>
-                <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px">
-                  Dokumentasi program pengabdian dan pemberdayaan berbasis komunitas yang dipamerkan pada Gelar Karya Mahasiswa PPG Universitas Negeri Yogyakarta. Menggabungkan kolaborasi murid, orang tua, dan komunitas praktisi sekolah
-                  mitra.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px">
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Telah dipresentasikan dan mendapat apresiasi dosen penguji</span>
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--deep-navy)">
-                    <i class="fa-solid fa-circle-check" style="color: #059669"></i>
-                    <span>Memberikan dampak berkelanjutan bagi sekolah sasaran</span>
-                  </div>
-                </div>
-                <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="btn-pill-dark">
-                  <span>Unduh Laporan Gelar Karya</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                <span style="font-size: 0.74rem; font-weight: 800; color: #d97706; text-transform: uppercase">Kegiatan Utama 3</span>
+                <h3 class="c-card-title" style="font-size: 1.15rem">Kuis Bertingkat &amp; Umpan Balik</h3>
+              </div>
+            </div>
+            <p class="c-card-text" style="font-size: 0.9rem; line-height: 1.65; margin-bottom: 14px">
+              Soal interaktif berjenjang 3 level taksonomi Bloom (C2 Mengingat, C3 Memahami, C4 Menganalisis) yang menyajikan umpan balik dan penjelasan instan atas setiap jawaban murid.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.8); border-left: 3px solid #d97706; padding: 10px 14px; border-radius: 8px; font-size: 0.84rem; color: var(--deep-navy)">
+              <strong>Integrasi PSE:</strong> Latihan relaksasi pernapasan 4-4-4 meredam kecemasan tes dan penghargaan <em>Lencana Usaha</em> untuk memperkuat <em>pengelolaan diri</em> dan <em>growth mindset</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Rumusan Tujuan Inovasi -->
+        <div class="card-glass-block reveal-fade-up delay-200" style="padding: 34px; margin-bottom: 40px">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px">
+            <span class="sem-badge-pill" style="background: var(--deep-navy); color: #ffffff">TARGET CAPAIAN</span>
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--deep-navy); margin: 0">
+              5 Rumusan Tujuan Inovasi VOLI MINI
+            </h3>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px">
+            <div style="display: flex; gap: 14px; align-items: flex-start">
+              <span class="card-num-badge" style="background: var(--deep-navy); color: #ffffff; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0">1</span>
+              <div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 4px">Penguasaan Konsep Teknik Dasar</h4>
+                <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.6; margin: 0">Meningkatkan pemahaman prinsip gerak servis, passing bawah, passing atas, umpan (setter), smash, dan bendungan (block).</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start">
+              <span class="card-num-badge" style="background: var(--deep-navy); color: #ffffff; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0">2</span>
+              <div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 4px">Pengetahuan Regulasi &amp; Formasi</h4>
+                <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.6; margin: 0">Memahami peraturan resmi pertandingan, aturan rotasi 6 posisi, pola servis-terima, serta strategi dasar permainan bola voli.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start">
+              <span class="card-num-badge" style="background: var(--deep-navy); color: #ffffff; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0">3</span>
+              <div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 4px">Keterampilan Berpikir Kritis</h4>
+                <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.6; margin: 0">Mengembangkan nalar kritis murid dalam mendiagnosis kesalahan gerak tubuh dan mengambil keputusan taktis yang presisi.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start">
+              <span class="card-num-badge" style="background: var(--deep-navy); color: #ffffff; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0">4</span>
+              <div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 4px">Pencapaian Ketuntasan KKTP &ge; 80%</h4>
+                <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.6; margin: 0">Mengerek hasil belajar kognitif secara signifikan sekaligus mendongkrak kualitas performa motorik saat bertanding di lapangan.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: flex-start">
+              <span class="card-num-badge" style="background: var(--deep-navy); color: #ffffff; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0">5</span>
+              <div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 4px">Tumbuhnya 5 Pilar Kompetensi PSE</h4>
+                <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.6; margin: 0">Menciptakan ruang belajar yang aman, suportif, menumbuhkan empati teman sebaya, serta melatih tanggung jawab etis sportivitas.</p>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- ======================================================================
+             BAGIAN 3: RISET, TINJAUAN PSE & PROTOTIPE 4 BAGIAN
+             ====================================================================== -->
+        <div style="margin: 50px 0 24px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--slate-blue)">INDIKATOR 03</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Riset &amp; Pengembangan Prototipe</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            Riset Literatur &amp; Prototipe 4 Bagian VOLI MINI
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Mengisi celah video tutorial pasif satu arah dengan mengadopsi kerangka kerja CASEL <em>(Collaborative for Academic, Social, and Emotional Learning, 2020)</em>.
+          </p>
+        </div>
+
+        <!-- 4 Grid Prototipe VOLI MINI -->
+        <div class="kompetensi-4-grid reveal-fade-up delay-200">
+          <!-- Prototipe 1 -->
+          <div class="kompetensi-card" style="border-top: 4px solid #2563eb">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px">
+              <span class="badge-course-num" style="background: #2563eb">BAGIAN 01</span>
+              <span class="pse-badge-tag"><i class="fa-solid fa-cloud-sun"></i> Pembuka Cuaca Hati</span>
+            </div>
+            <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 8px">Peta Konsep Interaktif</h3>
+            <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.65; margin-bottom: 14px">
+              Menyajikan ringkasan visual teknik dasar, peraturan resmi FIVB, dan tata posisi formasi rotasi bola voli dalam format infografis Genially interaktif yang dapat diklik per babak.
+            </p>
+            <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.6">
+              <strong>Aktivitas PSE:</strong> Dibuka dengan ritual <em>Cuaca Hati</em> (3 menit) untuk memvalidasi kondisi emosi murid sebelum memulai eksplorasi materi kognitif.
+            </div>
+          </div>
+
+          <!-- Prototipe 2 -->
+          <div class="kompetensi-card" style="border-top: 4px solid #059669">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px">
+              <span class="badge-course-num" style="background: #059669">BAGIAN 02</span>
+              <span class="pse-badge-tag"><i class="fa-solid fa-user-group"></i> Umpan Balik Positif</span>
+            </div>
+            <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 8px">Analisis Video Komparatif</h3>
+            <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.65; margin-bottom: 14px">
+              Kompilasi cuplikan video gerak benar versus salah dengan fitur gerak lambat <em>(slow motion)</em>. Murid menandai kekeliruan gerak dan menuangkannya ke lembar kerja digital berbasis rubrik.
+            </p>
+            <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.6">
+              <strong>Aktivitas PSE:</strong> Analisis dikerjakan berpasangan (*peer review*) dengan kewajiban memberikan umpan balik apresiatif 3 kalimat untuk mengikis rasa takut salah.
+            </div>
+          </div>
+
+          <!-- Prototipe 3 -->
+          <div class="kompetensi-card" style="border-top: 4px solid #d97706">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px">
+              <span class="badge-course-num" style="background: #d97706">BAGIAN 03</span>
+              <span class="pse-badge-tag"><i class="fa-solid fa-scale-balanced"></i> Keputusan Etis</span>
+            </div>
+            <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 8px">Studi Kasus Pertandingan</h3>
+            <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.65; margin-bottom: 14px">
+              Simulasi interaktif situasi pertandingan kritis: menghadapi servis lawan yang menukik, rotasi setter di baris belakang, dan keputusan memilih pemain penyerang saat skor genting.
+            </p>
+            <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.6">
+              <strong>Aktivitas PSE:</strong> Melatih <em>responsible decision making</em> dengan mempertimbangkan dampak taktik bagi diri, kebersamaan tim, serta sportivitas terhadap kubu lawan.
+            </div>
+          </div>
+
+          <!-- Prototipe 4 -->
+          <div class="kompetensi-card" style="border-top: 4px solid #7c3aed">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px">
+              <span class="badge-course-num" style="background: #7c3aed">BAGIAN 04</span>
+              <span class="pse-badge-tag"><i class="fa-solid fa-star-half-stroke"></i> Bintang &amp; Harapan</span>
+            </div>
+            <h3 style="font-size: 1.22rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 8px">Kuis Bertingkat &amp; Refleksi</h3>
+            <p style="font-size: 0.88rem; color: var(--text-dark); line-height: 1.65; margin-bottom: 14px">
+              Evaluasi kognitif 3 tingkat kesulitan (mengingat C2, memahami C3, menganalisis C4) berumpan balik instan, pemberian <em>Lencana Usaha</em>, dan penilaian formatif mandiri.
+            </p>
+            <div style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.6">
+              <strong>Aktivitas PSE:</strong> Ditutup dengan jurnal refleksi <em>Bintang dan Harapan</em> (1 hal yang dikuasai &amp; 1 hal yang ingin ditingkatkan) guna merawat optimisme belajar.
+            </div>
+          </div>
+        </div>
+
+        <!-- Perangkat Pendukung Chips Box -->
+        <div class="artefak-highlight-box reveal-fade-up delay-200">
+          <div class="artefak-box-header">
+            <div class="artefak-header-title">
+              <i class="fa-solid fa-folder-tree" style="color: var(--slate-blue)"></i>
+              <span>Paket Perangkat Pendukung &amp; Instrumen PSE yang Dikembangkan</span>
+            </div>
+            <span class="badge-course-type">Tervalidasi Guru Sejawat</span>
+          </div>
+
+          <div class="artefak-list-chips">
+            <span class="sem-count-tag"><i class="fa-solid fa-file-circle-check"></i> Modul Ajar PJOK Terintegrasi</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-clipboard-question"></i> LKPD Analisis Gerak Bola Voli</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-list-check"></i> Rubrik Penilaian Kognitif Analitik</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-file-lines"></i> Kisi-kisi &amp; Butir Tes Kognitif</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-cloud-sun"></i> Kartu Emosi Cuaca Hati</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-star"></i> Lembar Refleksi Bintang &amp; Harapan</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-square-poll-vertical"></i> Angket Kompetensi PSE (Skala 1-4)</span>
+            <span class="sem-count-tag"><i class="fa-solid fa-user-shield"></i> Lembar Uji Validasi Sejawat Guru PJOK</span>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             BAGIAN 4: IMPLEMENTASI & RANCANGAN 4 PERTEMUAN
+             ====================================================================== -->
+        <div style="margin: 50px 0 24px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--slate-blue)">INDIKATOR 04</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Skenario Penerapan di Sekolah</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            Rancangan Alur Implementasi (4 Pertemuan Pembelajaran)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Uji coba terbatas pada topik passing bawah dan servis telah berhasil dilakukan untuk uji keterbacaan media, dilanjutkan desain implementasi penuh 4 pertemuan terpadu.
+          </p>
+        </div>
+
+        <!-- Timeline 4 Pertemuan -->
+        <div class="ppg-timeline-flow reveal-fade-up delay-200">
+          <!-- Tahap 0: Persiapan -->
+          <div class="timeline-milestone-item">
+            <div class="timeline-milestone-card">
+              <div class="milestone-badge-row">
+                <span class="badge-course-num" style="background: var(--slate-blue)">TAHAP PERSIAPAN</span>
+                <span class="badge-course-type">Sebelum Masuk Kelas</span>
+              </div>
+              <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 6px">
+                Analisis Kebutuhan, Penyusunan Media &amp; Validasi Ahli
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.65; margin: 0">
+                Memetakan karakteristik murid kelas XII, menyusun media VOLI MINI pada Canva dan Genially, menyiapkan instrumen penilaian, melakukan validasi ahli bersama guru sejawat PJOK, serta menggelar uji keterbacaan terbatas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pertemuan 1 -->
+          <div class="timeline-milestone-item">
+            <div class="timeline-milestone-card">
+              <div class="milestone-badge-row">
+                <span class="badge-course-num" style="background: #2563eb">PERTEMUAN 01</span>
+                <span class="pse-badge-tag"><i class="fa-solid fa-handshake"></i> Kontrak Kelas Aman</span>
+              </div>
+              <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 6px">
+                Pre-Test Kognitif, Kontrak Belajar &amp; Telaah Peta Konsep
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.65; margin: 0">
+                Pengerjaan pre-test kognitif (15 menit), ritual pembuka <em>Cuaca Hati</em> (3 menit), menyepakati norma kelas <strong>(Aman, Hormat, Aktif)</strong> bahwa salah gerak adalah bagian wajar dari belajar, pengenalan navigasi media VOLI MINI, serta eksplorasi mandiri Peta Konsep teknik dasar dan peraturan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pertemuan 2-3 -->
+          <div class="timeline-milestone-item">
+            <div class="timeline-milestone-card">
+              <div class="milestone-badge-row">
+                <span class="badge-course-num" style="background: #059669">PERTEMUAN 02 &ndash; 03</span>
+                <span class="pse-badge-tag"><i class="fa-solid fa-person-running"></i> Transfer Praktik Nyata</span>
+              </div>
+              <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 6px">
+                Analisis Video Berpasangan, Studi Kasus Taktik &amp; Aksi Lapangan
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.65; margin: 0">
+                Murid berpasangan membedah cuplikan video gerak benar-salah dengan saling memberi umpan balik apresiatif 3 kalimat. Dilanjutkan simulasi studi kasus situasi pertandingan kritis (skor deuce &amp; rotasi). Setelah itu, seluruh murid turun ke lapangan voli untuk membuktikan langsung hasil analisis kognitif ke dalam aksi bermain nyata.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pertemuan 4 -->
+          <div class="timeline-milestone-item">
+            <div class="timeline-milestone-card">
+              <div class="milestone-badge-row">
+                <span class="badge-course-num" style="background: #7c3aed">PERTEMUAN 04</span>
+                <span class="pse-badge-tag"><i class="fa-solid fa-wind"></i> Relaksasi Napas 4-4-4</span>
+              </div>
+              <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 6px">
+                Kuis Bertingkat, Post-Test Kognitif &amp; Refleksi Akhir
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.65; margin: 0">
+                Diawali relaksasi pernapasan sadar 4-4-4 untuk menurunkan kecemasan murid, pengerjaan kuis bertingkat mandiri dengan perolehan lencana usaha, post-test kognitif komprehensif, evaluasi pengisian angket PSE, dan penutupan melalui refleksi emosional <em>Bintang dan Harapan</em> (5 menit).
+              </p>
+            </div>
+          </div>
+
+          <!-- Tindak Lanjut -->
+          <div class="timeline-milestone-item">
+            <div class="timeline-milestone-card">
+              <div class="milestone-badge-row">
+                <span class="badge-course-num" style="background: var(--deep-navy)">TINDAK LANJUT</span>
+                <span class="badge-course-type">Diferensiasi Pembelajaran</span>
+              </div>
+              <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 6px">
+                Program Remedial Terarah &amp; Pengayaan Strategi Tim
+              </h3>
+              <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.65; margin: 0">
+                Bagi murid yang belum mencapai KKTP (&lt; 80%), diberikan pendampingan tutorial sebaya dengan mengulang Bagian 2 (Analisis Video). Bagi murid yang telah tuntas, diberikan tugas pengayaan merancang skema strategi penyerangan dan pertahanan tim bola voli kelas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             BAGIAN 5: TAHAPAN EVALUASI MENYELURUH & INDIKATOR KEBERHASILAN
+             ====================================================================== -->
+        <div style="margin: 50px 0 24px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--slate-blue)">INDIKATOR 05</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Tahapan Evaluasi Menyeluruh</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            Tahapan Evaluasi &amp; Pengukuran Keberhasilan Inovasi
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Pengukuran komprehensif mencakup ranah kognitif, unjuk kerja praktik lapangan, persepsi peserta didik, hingga ketercapaian kompetensi sosial-emosional.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 45px" class="reveal-fade-up delay-200">
+          <!-- Evaluasi 1: Proses -->
+          <div class="c-card-item" style="padding: 24px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(37, 99, 235, 0.12); color: #2563eb">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <h3 class="c-card-title">1. Evaluasi Proses</h3>
+            </div>
+            <p class="c-card-text">
+              Observasi keterlibatan aktif murid selama membuka media, kualitas interaksi saat berdiskusi berpasangan, serta penilaian rubrik atas kelengkapan lembar analisis gerak video dan studi kasus.
+            </p>
+          </div>
+
+          <!-- Evaluasi 2: Hasil Belajar -->
+          <div class="c-card-item" style="padding: 24px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h3 class="c-card-title">2. Evaluasi Hasil Belajar (KKTP)</h3>
+            </div>
+            <p class="c-card-text">
+              Perbandingan komparatif nilai <em>pre-test</em> dan <em>post-test</em> kognitif dengan target capaian &ge; 80% murid mencapai Kriteria Ketercapaian Tujuan Pembelajaran (KKTP).
+            </p>
+          </div>
+
+          <!-- Evaluasi 3: Transfer Praktik -->
+          <div class="c-card-item" style="padding: 24px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(245, 158, 11, 0.14); color: #d97706">
+                <i class="fa-solid fa-person-running"></i>
+              </div>
+              <h3 class="c-card-title">3. Evaluasi Transfer ke Praktik</h3>
+            </div>
+            <p class="c-card-text">
+              Pengamatan langsung guru PJOK di lapangan terhadap berkurangnya kesalahan mekanika gerak saat passing/servis serta hilangnya kebingungan rotasi formasi saat pertandingan kelas berlangsung.
+            </p>
+          </div>
+
+          <!-- Evaluasi 4: Persepsi -->
+          <div class="c-card-item" style="padding: 24px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(14, 165, 233, 0.12); color: #0284c7">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <h3 class="c-card-title">4. Evaluasi Persepsi Murid &amp; Guru</h3>
+            </div>
+            <p class="c-card-text">
+              Penyebaran angket tanggapan murid terhadap kemudahan, kemenarikan, dan kebermanfaatan media VOLI MINI, serta formulir masukan kualitatif dari rekan guru sejawat PJOK dalam kategori tinggi.
+            </p>
+          </div>
+
+          <!-- Evaluasi 5: Aspek PSE -->
+          <div class="c-card-item" style="padding: 24px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(139, 92, 246, 0.12); color: #7c3aed">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <h3 class="c-card-title">5. Evaluasi Aspek Sosial Emosional</h3>
+            </div>
+            <p class="c-card-text">
+              Pengisian angket 5 kompetensi PSE (skala 1–4), observasi iklim kerja sama antarmurid, dan rekapitulasi kartu Cuaca Hati dengan target &ge; 75% murid berada pada zona emosi tenang, termotivasi, dan percaya diri (kartu hijau).
+            </p>
+          </div>
+
+          <!-- Evaluasi 6: Siklus Refleksi -->
+          <div class="c-card-item" style="padding: 24px">
+            <div class="c-card-header">
+              <div class="c-badge-icon" style="background: rgba(225, 29, 72, 0.12); color: #e11d48">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </div>
+              <h3 class="c-card-title">6. Refleksi &amp; Perbaikan Siklus</h3>
+            </div>
+            <p class="c-card-text">
+              Hasil evaluasi proses, hasil, transfer, dan PSE dijadikan basis data empiris untuk merevisi media interaktif, memperkaya bank soal kasus, dan menyempurnakan modul pada siklus pengajaran berikutnya.
+            </p>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             BAGIAN 6: 5 PRINSIP KARYA INOVASI PENDIDIKAN (CATATAN LK 4)
+             ====================================================================== -->
+        <div style="margin: 50px 0 24px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--slate-blue)">STANDAR MUTU</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Pedoman Desain Karya Inovatif</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            5 Prinsip Karya Inovasi Pendidikan
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Kesesuaian rancangan karya inovasi VOLI MINI dengan lima prinsip baku yang digariskan pada Lembar Kerja 4 PPG Calon Guru.
+          </p>
+        </div>
+
+        <div class="reveal-fade-up delay-200" style="margin-bottom: 50px">
+          <table class="principle-glass-table">
+            <thead>
+              <tr>
+                <th style="width: 25%">Prinsip Karya Inovasi</th>
+                <th style="width: 75%">Penjelasan &amp; Implementasi Nyata pada VOLI MINI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <span style="width: 28px; height: 28px; border-radius: 8px; background: rgba(37, 99, 235, 0.12); color: #2563eb; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800">1</span>
+                    <strong>Kebaruan (Novelty)</strong>
+                  </div>
+                </td>
+                <td>
+                  Produk mengandung unsur baru dalam materi bola voli PJOK: pembelajaran kognitif tidak disajikan melalui ceramah atau hafalan teks melainkan dikemas ke dalam analisis video gerak nyata, simulasi keputusan taktik pertandingan, serta integrasi terstruktur 5 kompetensi sosial-emosional CASEL yang belum pernah ada sebelumnya.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <span style="width: 28px; height: 28px; border-radius: 8px; background: rgba(16, 185, 129, 0.12); color: #059669; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800">2</span>
+                    <strong>Kreativitas</strong>
+                  </div>
+                </td>
+                <td>
+                  Dihasilkan melalui sintesis kreatif yang memadukan teknologi audio-visual interaktif (Genially/Canva), gamifikasi kuis bertingkat berumpan balik instan, dengan metodologi psikososial (ritual Cuaca Hati, latihan pernapasan 4-4-4, dan peer review positif) dalam satu alur belajar mandiri yang ramah gawai.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <span style="width: 28px; height: 28px; border-radius: 8px; background: rgba(245, 158, 11, 0.14); color: #d97706; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800">3</span>
+                    <strong>Kebermanfaatan (Usefulness)</strong>
+                  </div>
+                </td>
+                <td>
+                  Memberikan nilai tambah konkret: bagi murid membantu memahami esensi biomekanika gerak sehingga unjuk kerja motorik di lapangan lebih terarah dan aman; bagi guru PJOK menyediakan instrumen penilaian kognitif objektif, terukur, dan efisien tanpa menyita jam praktik lapangan.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <span style="width: 28px; height: 28px; border-radius: 8px; background: rgba(14, 165, 233, 0.12); color: #0284c7; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800">4</span>
+                    <strong>Relevansi &amp; Kontekstualitas</strong>
+                  </div>
+                </td>
+                <td>
+                  Sangat selaras dengan capaian pembelajaran Kurikulum Merdeka (elemen pengetahuan gerak), sesuai dengan karakteristik generasi murid kelas XII SMA yang lekat dengan gawai, serta kontekstual terhadap dinamika pertandingan bola voli antarkelas maupun antarsekolah.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <span style="width: 28px; height: 28px; border-radius: 8px; background: rgba(139, 92, 246, 0.12); color: #7c3aed; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 800">5</span>
+                    <strong>Efektivitas Terbukti (Evidence-Based)</strong>
+                  </div>
+                </td>
+                <td>
+                  Keberhasilan diukur secara terstruktur berbasis data empiris: komparasi pre-test vs post-test kognitif (target &ge; 80% KKTP), observasi penurunan kesalahan rotasi di lapangan, angket kepuasan murid kategori tinggi, serta tercapainya &ge; 75% murid pada zona emosi kondusif.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ======================================================================
+             BAGIAN 7: DOKUMEN ASLI LK 4 (INTERACTIVE PDF VIEWER)
+             ====================================================================== -->
+        <div style="margin: 50px 0 20px" class="reveal-fade-up delay-150">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px">
+            <span class="badge-course-num" style="background: var(--deep-navy)">DOKUMEN RESMI</span>
+            <span style="font-size: 0.8rem; color: var(--slate-blue); font-weight: 700; text-transform: uppercase">Pratinjau Berkas Lembar Kerja 4</span>
+          </div>
+          <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); line-height: 1.3">
+            Dokumen Asli LK 4 <span class="text-italic-accent">desain karya inovatif.</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 6px">
+            Tinjau langsung berkas PDF resmi Lembar Kerja 4 (6 Halaman) Penyusunan Desain Karya Inovatif VOLI MINI oleh Retno Kumala Sari, S.Pd.,M.Pd.
+          </p>
+        </div>
+
+        <article class="course-glass-card reveal-fade-up delay-200" id="dokumen-karya-inovasi" style="padding: 24px; margin-bottom: 45px">
+          <div class="pdf-viewer-container" style="margin-top: 0">
+            <div class="pdf-viewer-bar">
+              <div class="pdf-file-info">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Karya.pdf (Lembar Kerja 4 - Desain Karya Inovatif VOLI MINI)</span>
+                <span class="pdf-page-count-badge">6 Halaman • LK 4 Terverifikasi</span>
+              </div>
+              <div class="pdf-viewer-controls">
+                <button type="button" class="pdf-btn-ctrl toggle-expand-frame" title="Perbesar / Perkecil Tampilan Viewer">
+                  <i class="fa-solid fa-up-down"></i> <span>Ubah Ukuran</span>
+                </button>
+                <a href="Dokumen/Karya.pdf" target="_blank" class="pdf-btn-ctrl" title="Buka Dokumen di Tab Baru">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Tab Baru</span>
+                </a>
+                <a href="Dokumen/Karya.pdf" download="LK4_Desain_Karya_Inovatif_Retno.pdf" class="pdf-btn-ctrl" title="Unduh Berkas PDF">
+                  <i class="fa-solid fa-download"></i> <span>Unduh</span>
+                </a>
+              </div>
+            </div>
+            <div class="pdf-frame-wrapper" style="height: 620px">
+              <iframe src="Dokumen/Karya.pdf#toolbar=1&amp;navpanes=0" title="PDF Viewer Lembar Kerja 4 Desain Karya Inovatif" loading="lazy"></iframe>
+            </div>
+            <div class="pdf-mobile-fallback">
+              <span><i class="fa-solid fa-circle-info"></i> Tampilan dokumen PDF optimal pada layar desktop/tablet.</span>
+              <a href="Dokumen/Karya.pdf" target="_blank" class="btn-pill-reserve" style="padding: 6px 14px; font-size: 0.78rem">
+                <span>Buka Dokumen PDF</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <!-- Subpage Navigation Row -->
         <div class="subpage-nav-row reveal-fade-up delay-200">
-          <a href="sem2.html" class="btn-pill-glass">
+          <a href="refleksi.html" class="btn-pill-glass">
             <i class="fa-solid fa-arrow-left"></i>
-            <span>Kembali ke Refleksi Semester 2</span>
+            <span>Kembali ke Refleksi PPG</span>
           </a>
           <a href="index.html" class="btn-pill-dark">
             <span>Kembali ke Beranda Utama</span>
@@ -221,9 +898,6 @@
          FOOTER
          ========================================================================== -->
     <footer class="site-footer">
-      <svg class="sunburst-icon footer-sunburst-right" viewBox="0 0 100 100" aria-hidden="true">
-        <use href="#sunburst-shape" />
-      </svg>
       <div class="container">
         <div class="footer-top-meta">
           <p class="footer-copyright-text">&copy; 2026 Retno Kumala Sari, S.Pd.,M.Pd • PPG Calon Guru Universitas Negeri Yogyakarta. All rights reserved.</p>
@@ -244,6 +918,38 @@
         const header = document.getElementById("siteHeader");
         if (window.scrollY > 30) header.classList.add("scrolled");
         else header.classList.remove("scrolled");
+      });
+
+      // Mobile / Tablet Menu Navigation Toggle
+      const navToggleBtn = document.getElementById("navToggleBtn");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function toggleMobileMenu() {
+        const isOpen = navLinks.classList.toggle("open");
+        if (navBackdrop) navBackdrop.classList.toggle("active", isOpen);
+        if (navToggleBtn) {
+          navToggleBtn.setAttribute("aria-expanded", isOpen);
+          const icon = navToggleBtn.querySelector("i");
+          if (icon) icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+        }
+      }
+
+      function closeMobileMenu() {
+        if (navLinks) navLinks.classList.remove("open");
+        if (navBackdrop) navBackdrop.classList.remove("active");
+        if (navToggleBtn) {
+          navToggleBtn.setAttribute("aria-expanded", "false");
+          const icon = navToggleBtn.querySelector("i");
+          if (icon) icon.className = "fa-solid fa-bars";
+        }
+      }
+
+      if (navToggleBtn) navToggleBtn.addEventListener("click", toggleMobileMenu);
+      if (navBackdrop) navBackdrop.addEventListener("click", closeMobileMenu);
+      document.querySelectorAll(".nav-link").forEach((link) => link.addEventListener("click", closeMobileMenu));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMobileMenu();
       });
 
       // Count-Up Animation
@@ -300,6 +1006,28 @@
         },
         { passive: true },
       );
+
+      // Interactive PDF Frame Height Toggle (Normal 620px vs Expanded 880px)
+      document.querySelectorAll(".toggle-expand-frame").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const container = btn.closest(".pdf-viewer-container");
+          if (!container) return;
+          const wrapper = container.querySelector(".pdf-frame-wrapper");
+          if (!wrapper) return;
+
+          wrapper.classList.toggle("expanded");
+          const icon = btn.querySelector("i");
+          const text = btn.querySelector("span");
+
+          if (wrapper.classList.contains("expanded")) {
+            if (icon) icon.className = "fa-solid fa-compress";
+            if (text) text.textContent = "Kecilkan";
+          } else {
+            if (icon) icon.className = "fa-solid fa-up-down";
+            if (text) text.textContent = "Ubah Ukuran";
+          }
+        });
+      });
 
       // Scroll Reveal System using IntersectionObserver
       document.addEventListener("DOMContentLoaded", () => {

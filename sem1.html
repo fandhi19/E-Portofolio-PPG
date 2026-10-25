@@ -46,20 +46,59 @@
           <span>SEMINAR PPG</span>
         </a>
 
-        <nav class="nav-links">
-          <a href="index.html" class="nav-link">BERANDA</a>
-          <a href="visi.html" class="nav-link">VISI PRIBADI</a>
-          <a href="sem1.html" class="nav-link active">REFLEKSI SEM 1</a>
-          <a href="sem2.html" class="nav-link">REFLEKSI SEM 2</a>
-          <a href="karya.html" class="nav-link">KARYA INOVASI</a>
+        <!-- Menu Navigasi (Desktop Capsule / Mobile Offcanvas Glass Menu) -->
+        <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">
+            <span>BERANDA</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="visi.html" class="nav-link">
+            <span>VISI PRIBADI</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="sem1.html" class="nav-link active">
+            <span>REFLEKSI SEM 1</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="sem2.html" class="nav-link">
+            <span>REFLEKSI SEM 2</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="refleksi.html" class="nav-link">
+            <span>REFLEKSI PPG</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="karya.html" class="nav-link">
+            <span>KARYA INOVASI</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+
+          <!-- Mobile Only CTA inside Drawer -->
+          <div class="mobile-nav-cta">
+            <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn mobile-cta-full">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>LIHAT PORTOFOLIO PPL</span>
+            </a>
+          </div>
         </nav>
 
-        <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          <span>LIHAT PORTOFOLIO PPL</span>
-        </a>
+        <!-- Right Side: Desktop CTA & Hamburger Button -->
+        <div class="nav-actions-group">
+          <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn desktop-only-btn">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>LIHAT PORTOFOLIO PPL</span>
+          </a>
+
+          <!-- Hamburger Toggle Button (Mobile & Tablet) -->
+          <button class="nav-toggle-btn" id="navToggleBtn" type="button" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
     </header>
+
+    <!-- Backdrop for Mobile / Tablet Menu -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
 
     <!-- ==========================================================================
          MAIN CONTENT: REFLEKSI SEMESTER 1 & PDF VIEWER
@@ -1154,6 +1193,38 @@
         const header = document.getElementById("siteHeader");
         if (window.scrollY > 30) header.classList.add("scrolled");
         else header.classList.remove("scrolled");
+      });
+
+      // Mobile / Tablet Menu Navigation Toggle
+      const navToggleBtn = document.getElementById("navToggleBtn");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function toggleMobileMenu() {
+        const isOpen = navLinks.classList.toggle("open");
+        if (navBackdrop) navBackdrop.classList.toggle("active", isOpen);
+        if (navToggleBtn) {
+          navToggleBtn.setAttribute("aria-expanded", isOpen);
+          const icon = navToggleBtn.querySelector("i");
+          if (icon) icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+        }
+      }
+
+      function closeMobileMenu() {
+        if (navLinks) navLinks.classList.remove("open");
+        if (navBackdrop) navBackdrop.classList.remove("active");
+        if (navToggleBtn) {
+          navToggleBtn.setAttribute("aria-expanded", "false");
+          const icon = navToggleBtn.querySelector("i");
+          if (icon) icon.className = "fa-solid fa-bars";
+        }
+      }
+
+      if (navToggleBtn) navToggleBtn.addEventListener("click", toggleMobileMenu);
+      if (navBackdrop) navBackdrop.addEventListener("click", closeMobileMenu);
+      document.querySelectorAll(".nav-link").forEach((link) => link.addEventListener("click", closeMobileMenu));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMobileMenu();
       });
 
       // Scroll-Linked Rotation for Sunbursts

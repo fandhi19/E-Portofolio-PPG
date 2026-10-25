@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visi Pribadi Guru Profesional | Retno Kumala Sari, S.Pd.,M.Pd — PPG Calon Guru UNY</title>
-    <meta name="description" content="Visi Pribadi Guru Profesional - Retno Kumala Sari, S.Pd.,M.Pd, PPG Calon Guru Universitas Negeri Yogyakarta 2026." />
+    <meta name="description" content="Lembar Kerja 1 (LK 1) Identifikasi Diri & Visi Pribadi Guru Profesional - Retno Kumala Sari, S.Pd.,M.Pd, PPG Calon Guru Universitas Negeri Yogyakarta 2026." />
 
     <link rel="shortcut icon" href="images/Logo Uny outlitne.png" type="image/x-icon" />
 
@@ -48,20 +48,59 @@
           <span>SEMINAR PPG</span>
         </a>
 
-        <nav class="nav-links">
-          <a href="index.html" class="nav-link">BERANDA</a>
-          <a href="visi.html" class="nav-link active">VISI PRIBADI</a>
-          <a href="sem1.html" class="nav-link">REFLEKSI SEM 1</a>
-          <a href="sem2.html" class="nav-link">REFLEKSI SEM 2</a>
-          <a href="karya.html" class="nav-link">KARYA INOVASI</a>
+        <!-- Menu Navigasi (Desktop Capsule / Mobile Offcanvas Glass Menu) -->
+        <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">
+            <span>BERANDA</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="visi.html" class="nav-link active">
+            <span>VISI PRIBADI</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="sem1.html" class="nav-link">
+            <span>REFLEKSI SEM 1</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="sem2.html" class="nav-link">
+            <span>REFLEKSI SEM 2</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="refleksi.html" class="nav-link">
+            <span>REFLEKSI PPG</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+          <a href="karya.html" class="nav-link">
+            <span>KARYA INOVASI</span>
+            <i class="fa-solid fa-chevron-right mobile-nav-arrow"></i>
+          </a>
+
+          <!-- Mobile Only CTA inside Drawer -->
+          <div class="mobile-nav-cta">
+            <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn mobile-cta-full">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>LIHAT PORTOFOLIO PPL</span>
+            </a>
+          </div>
         </nav>
 
-        <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          <span>LIHAT PORTOFOLIO PPL</span>
-        </a>
+        <!-- Right Side: Desktop CTA & Hamburger Button -->
+        <div class="nav-actions-group">
+          <a href="https://e-portofolio-ppg-retno.vercel.app/" target="_blank" class="nav-contact-btn desktop-only-btn">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>LIHAT PORTOFOLIO PPL</span>
+          </a>
+
+          <!-- Hamburger Toggle Button (Mobile & Tablet) -->
+          <button class="nav-toggle-btn" id="navToggleBtn" type="button" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="navLinks">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
     </header>
+
+    <!-- Backdrop for Mobile / Tablet Menu -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
 
     <!-- ==========================================================================
          MAIN CONTENT: VISI PRIBADI GURU PROFESIONAL
@@ -71,122 +110,248 @@
         <!-- Page Intro Banner -->
         <div class="page-intro-banner reveal-fade-up">
           <div>
-            <span class="tag-system-updates"><i class="fa-solid fa-compass"></i> ARAH &amp; KOMITMEN PEDAGOGIS</span>
+            <span class="tag-system-updates"><i class="fa-solid fa-compass"></i> LEMBAR KERJA 1 (LK 1) • IDENTIFIKASI DIRI</span>
           </div>
           <h1>
-            Visi Pribadi Guru <span class="text-italic-accent">profesional.</span>
+            Visi Pribadi Guru <span class="text-italic-accent">reflektif.</span>
           </h1>
           <p>
-            Pandangan filosofis, nilai moral, dan komitmen transformatif saya sebagai pendidik profesional: menuntun kodrat peserta didik dengan pendekatan yang humanis, berpusat pada murid, adaptif teknologi, serta berakar kuat pada nilai-nilai luhur Pancasila.
+            Arah pandang filosofis, nilai adab, dan komitmen pedagogis Retno Kumala Sari, S.Pd.,M.Pd. sebagai calon pendidik: mengembangkan bakat potensi kodrat anak, mengutamakan budi pekerti dan empati, menciptakan iklim belajar yang membahagiakan tanpa beban, serta adaptif memanfaatkan teknologi pembelajaran abad-21.
           </p>
         </div>
 
         <!-- Statement Visi Utama (Blockquote Card) -->
-        <div class="card-glass-block reveal-fade-up delay-100">
+        <div class="card-glass-block reveal-fade-up delay-100" style="margin-bottom: 36px">
           <div style="display: flex; gap: 24px; align-items: flex-start">
             <span style="font-size: 3.5rem; color: var(--slate-blue); line-height: 1; font-family: Georgia, serif">“</span>
-            <div>
-              <span class="sem-count-tag" style="margin-bottom: 12px; display: inline-block">PERNYATAAN VISI UTAMA</span>
-              <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 16px; line-height: 1.25">
-                Mewujudkan Lingkungan Belajar yang Menuntun, Memerdekakan, dan Mengembangkan Potensi Kodrat Anak Menuju Generasi Emas yang Berkarakter.
+            <div style="flex: 1">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap">
+                <span class="sem-badge-pill">SINTESIS VISI GURU</span>
+                <span class="sem-count-tag"><i class="fa-solid fa-heart"></i> Pendidikan Ramah Anak</span>
+                <span class="sem-count-tag"><i class="fa-solid fa-seedling"></i> Karakter &amp; Adab Luhur</span>
+              </div>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 16px; line-height: 1.35">
+                "Menciptakan ruang belajar inklusif yang memungkinkan setiap anak berkembang sesuai bakat dan potensinya — tidak terpaku pada angka akademik, melainkan mengedepankan adab, empati, dan kegembiraan belajar tanpa beban."
               </h2>
-              <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.7; font-style: italic">
-                "Sebagai pendidik, saya berkomitmen bukan sekadar mentransfer pengetahuan akademis, melainkan hadir sebagai fasilitator yang mengasuh nalar kritis, menyalakan rasa ingin tahu, serta memperkuat kesejahteraan emosional murid agar tumbuh menjadi pribadi yang merdeka, berakhlak mulia, dan siap menghadapi tantangan zaman."
+              <p style="font-size: 1rem; color: var(--text-dark); line-height: 1.75; font-style: italic; background: rgba(255, 255, 255, 0.55); padding: 16px 20px; border-radius: 14px; border-left: 4px solid var(--slate-blue)">
+                "Sebagai calon guru, saya bervisi menjadi pendidik yang tidak hanya mentransfer materi, melainkan membimbing dengan sabar, memberikan dampak positif, serta memfasilitasi siswa menjadi pembelajar sepanjang hayat yang kreatif, berpikir kritis, dan siap menghadapi perkembangan teknologi zaman."
               </p>
             </div>
           </div>
         </div>
 
-        <!-- 4 Pilar Dimensi Visi Guru -->
-        <div style="margin: 50px 0 24px" class="reveal-fade-up delay-150">
-          <h2 style="font-size: 2rem; font-weight: 800; color: var(--deep-navy); letter-spacing: -0.03em">
-            4 Dimensi Pilar <span class="text-italic-accent">visi.</span>
+        <!-- 3 Pilar Refleksi Visi (Berdasarkan 3 Indikator LK 1 Identifikasi Diri) -->
+        <div style="margin: 45px 0 24px" class="reveal-fade-up delay-150">
+          <h2 style="font-size: 1.95rem; font-weight: 800; color: var(--deep-navy); letter-spacing: -0.02em">
+            Tiga Dimensi Inti <span class="text-italic-accent">identifikasi diri.</span>
           </h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px">Fondasi aksi pedagogik yang melandasi setiap perancangan modul, interaksi kelas, dan refleksi keprofesian.</p>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px">
+            Uraian autentik dari Lembar Kerja 1 (LK 1) mengenai pandangan pendidikan Indonesia, peran sebagai pendidik, dan langkah aksi nyata pencapaiannya.
+          </p>
         </div>
 
-        <div class="dimension-grid-4x">
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 45px">
+
+          <!-- Indikator 1: Visi Pendidikan Indonesia -->
+          <div class="card-glass-block reveal-fade-up delay-100" style="padding: 30px">
+            <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap">
+              <div class="dim-icon-circle" style="background: rgba(37, 99, 235, 0.12); color: #2563eb; width: 56px; height: 56px; font-size: 1.4rem; flex-shrink: 0">
+                <i class="fa-solid fa-earth-asia"></i>
+              </div>
+              <div style="flex: 1; min-width: 280px">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px">
+                  <span class="badge-course-num" style="background: #2563eb">INDIKATOR 01</span>
+                  <span class="card-sem-sub" style="color: var(--slate-blue); font-weight: 700">Perspektif Makro</span>
+                </div>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 12px">
+                  Visi Pribadi untuk Pendidikan di Indonesia
+                </h3>
+                <div style="background: rgba(255, 255, 255, 0.65); border-radius: 16px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.9); margin-bottom: 16px">
+                  <p style="font-size: 0.98rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 12px">
+                    <strong>Uraian Jawaban LK 1:</strong>
+                  </p>
+                  <blockquote style="font-size: 0.95rem; color: var(--deep-navy); line-height: 1.8; font-style: normal; border-left: 3px solid #2563eb; padding-left: 16px">
+                    "Menurut saya, <strong>Pendidikan di Indonesia ini harus mampu menjadi tempat bagi setiap anak untuk berkembang sesuai dengan bakat atau potensi yang dimilikinya</strong>. Dari sini saya sangat berharap <strong>jangan terlalu fokus pada nilai akademik</strong>, tetapi <strong>adab di sekolah, pembentukan karakter yang baik, lebih kreatif dalam pembelajaran, sikap peduli dengan sesama teman dan warga sekolah</strong>, dan kemampuan berpikir kritis sehingga murid siap untuk menghadapi perkembangan zaman yang semakin hari semakin maju (teknologinya)."
+                  </blockquote>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                  <span class="sem-count-tag"><i class="fa-solid fa-check"></i> Bukan Sekadar Nilai Angka</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-hands-holding-child"></i> Adab &amp; Karakter Utama</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-users"></i> Empati Sesama Warga Sekolah</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-microchip"></i> Berpikir Kritis Hadapi Zaman</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Indikator 2: Visi Calon Guru -->
+          <div class="card-glass-block reveal-fade-up delay-150" style="padding: 30px">
+            <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap">
+              <div class="dim-icon-circle" style="background: rgba(16, 185, 129, 0.12); color: #059669; width: 56px; height: 56px; font-size: 1.4rem; flex-shrink: 0">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <div style="flex: 1; min-width: 280px">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px">
+                  <span class="badge-course-num" style="background: #059669">INDIKATOR 02</span>
+                  <span class="card-sem-sub" style="color: #059669; font-weight: 700">Komitmen Pribadi Pendidik</span>
+                </div>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 12px">
+                  Visi Pribadi sebagai Calon Guru
+                </h3>
+                <div style="background: rgba(255, 255, 255, 0.65); border-radius: 16px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.9); margin-bottom: 16px">
+                  <p style="font-size: 0.98rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 12px">
+                    <strong>Uraian Jawaban LK 1:</strong>
+                  </p>
+                  <blockquote style="font-size: 0.95rem; color: var(--deep-navy); line-height: 1.8; font-style: normal; border-left: 3px solid #059669; padding-left: 16px">
+                    "Visi saya sebagai calon guru, <strong>saya ingin menjadi pendidik yang bisa memberikan dampak positif untuk anak didik saya, membimbing murid dengan sabar, dan menciptakan suasana belajar yang menyenangkan tanpa adanya beban.</strong>"
+                  </blockquote>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                  <span class="sem-count-tag"><i class="fa-solid fa-sparkles"></i> Memberikan Dampak Positif</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-heart"></i> Membimbing dengan Sabar</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-face-smile"></i> Suasana Menyenangkan Tanpa Beban</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-shield-heart"></i> Keamanan Psikologis Siswa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Indikator 3: Langkah Nyata Pencapaian Visi -->
+          <div class="card-glass-block reveal-fade-up delay-200" style="padding: 30px">
+            <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap">
+              <div class="dim-icon-circle" style="background: rgba(139, 92, 246, 0.12); color: #7c3aed; width: 56px; height: 56px; font-size: 1.4rem; flex-shrink: 0">
+                <i class="fa-solid fa-person-running"></i>
+              </div>
+              <div style="flex: 1; min-width: 280px">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px">
+                  <span class="badge-course-num" style="background: #7c3aed">INDIKATOR 03</span>
+                  <span class="card-sem-sub" style="color: #7c3aed; font-weight: 700">Strategi &amp; Rencana Tindakan</span>
+                </div>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--deep-navy); margin-bottom: 12px">
+                  Hal yang Dilakukan untuk Mencapai Visi
+                </h3>
+                <div style="background: rgba(255, 255, 255, 0.65); border-radius: 16px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.9); margin-bottom: 16px">
+                  <p style="font-size: 0.98rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 12px">
+                    <strong>Uraian Jawaban LK 1:</strong>
+                  </p>
+                  <blockquote style="font-size: 0.95rem; color: var(--deep-navy); line-height: 1.8; font-style: normal; border-left: 3px solid #7c3aed; padding-left: 16px">
+                    "Untuk mewujudkan visi saya, yang saya akan lakukan <strong>terus belajar dalam menghadapi situasi kelas dan mengembangkan kemampuan saya sebagai pendidik</strong>. Tugas ini memang tidak mudah. Saya masih mencoba dan belajar tentang <strong>memanfaatkan teknologi dalam pembelajaran</strong>, serta mencoba <strong>menerapkan metode belajar yang aktif, bermakna dan menyenangkan.</strong>"
+                  </blockquote>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                  <span class="sem-count-tag"><i class="fa-solid fa-rotate"></i> Terus Belajar Situasi Kelas</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-laptop-code"></i> Memanfaatkan Teknologi Pembelajaran</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-gamepad"></i> Metode Belajar Aktif &amp; Bermakna</span>
+                  <span class="sem-count-tag"><i class="fa-solid fa-brain"></i> Mindset Bertumbuh Pendidik</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4 Pilar Dimensi Visi Guru (Visual Kartu Interaktif 3D) -->
+        <div style="margin: 45px 0 24px" class="reveal-fade-up delay-150">
+          <h2 style="font-size: 1.95rem; font-weight: 800; color: var(--deep-navy); letter-spacing: -0.02em">
+            4 Pilar Aksi Pedagogik <span class="text-italic-accent">guru PJOK.</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px">
+            Penjabaran praktis visi ke dalam budaya pembelajaran jasmani, pengelolaan kelas, dan interaksi sehari-hari bersama murid.
+          </p>
+        </div>
+
+        <div class="dimension-grid-4x" style="margin-bottom: 45px">
           <!-- Dimensi 1 -->
           <div class="dimension-card reveal-scale delay-100">
-            <div class="dim-icon-circle">
+            <div class="dim-icon-circle" style="background: rgba(37, 99, 235, 0.12); color: #2563eb">
               <i class="fa-solid fa-seedling"></i>
             </div>
-            <h3>1. Menuntun Kodrat Peserta Didik</h3>
+            <h3>1. Pengembangan Potensi &amp; Bakat</h3>
             <p>
-              Mengadopsi filosofi Ki Hadjar Dewantara bahwa anak bukanlah kertas kosong, melainkan telah memiliki garis-garis samar potensi. Tugas guru adalah menebalkan garis-garis kebaikan tersebut selaras dengan kodrat alam dan kodrat zaman.
+              Menyadari bahwa setiap anak membawa keunikan potensi fisik dan motorik yang berbeda. Menghindari standarisasi kaku yang membebani, serta memfasilitasi setiap murid menemukan kegembiraan gerak sesuai potensinya.
             </p>
           </div>
 
           <!-- Dimensi 2 -->
           <div class="dimension-card reveal-scale delay-150">
-            <div class="dim-icon-circle">
-              <i class="fa-solid fa-shapes"></i>
+            <div class="dim-icon-circle" style="background: rgba(245, 158, 11, 0.14); color: #d97706">
+              <i class="fa-solid fa-hand-holding-heart"></i>
             </div>
-            <h3>2. Pembelajaran Berdiferensiasi</h3>
+            <h3>2. Penanaman Adab &amp; Karakter</h3>
             <p>
-              Menyadari keunikan setiap peserta didik. Guru merancang strategi diferensiasi konten, proses, dan produk melalui pemetaan profil belajar siswa serta asesmen diagnostik yang terukur.
+              Memprioritaskan adab kesopanan, sportivitas, dan sikap saling peduli antar-teman di lapangan olahraga. Prestasi akademik dan keterampilan motorik harus berakar kuat pada integritas moral dan etika luhur.
             </p>
           </div>
 
           <!-- Dimensi 3 -->
           <div class="dimension-card reveal-scale delay-200">
-            <div class="dim-icon-circle">
-              <i class="fa-solid fa-heart-pulse"></i>
+            <div class="dim-icon-circle" style="background: rgba(16, 185, 129, 0.12); color: #059669">
+              <i class="fa-solid fa-face-laugh-beam"></i>
             </div>
-            <h3>3. Kompetensi Sosial Emosional</h3>
+            <h3>3. Belajar Menyenangkan Tanpa Beban</h3>
             <p>
-              Mengintegrasikan 5 kompetensi CASEL (kesadaran diri, manajemen diri, kesadaran sosial, keterampilan berelasi, dan pengambilan keputusan bertanggung jawab) dalam budaya kelas sehari-hari.
+              Menciptakan ruang belajar yang ramah anak, sabar dalam mendampingi murid yang tertinggal gerak, serta meniadakan rasa takut salah melalui modifikasi permainan (*game-centered learning*) yang mengundang tawa dan kesehatan.
             </p>
           </div>
 
           <!-- Dimensi 4 -->
           <div class="dimension-card reveal-scale delay-250">
-            <div class="dim-icon-circle">
+            <div class="dim-icon-circle" style="background: rgba(139, 92, 246, 0.12); color: #7c3aed">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
-            <h3>4. Inovasi &amp; Literasi Digital TPACK</h3>
+            <h3>4. Pemanfaatan Teknologi &amp; Nalar Kritis</h3>
             <p>
-              Memanfaatkan teknologi informasi dan kecerdasan buatan secara etis untuk memperkaya pengalaman belajar interaktif, bukan sekadar menggantikan media tradisional tanpa esensi pedagogik.
+              Terus beradaptasi mengintegrasikan teknologi digital dan media visual untuk membantu murid menganalisis gerak, menumbuhkan nalar kritis, serta membekali anak agar tangguh menghadapi kemajuan zaman.
             </p>
           </div>
         </div>
 
-        <!-- Rencana Aksi Nyata & Komitmen Etis -->
-        <div class="card-glass-block reveal-fade-up delay-200">
-          <div class="semester-group-header">
-            <div class="sem-badge-pill">AKSI NYATA</div>
-            <h3 class="sem-group-title">Komitmen Praktik Pembelajaran Berkelanjutan</h3>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 20px">
-            <div>
-              <h4 style="font-size: 1.1rem; color: var(--deep-navy); margin-bottom: 8px">
-                <i class="fa-solid fa-circle-check" style="color: #059669; margin-right: 8px"></i>Budaya Positif di Sekolah
-              </h4>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6">
-                Membangun kesepakatan kelas yang partisipatif, disiplin positif berbasis restitusi, dan meniadakan segala bentuk perundungan serta diskriminasi.
-              </p>
-            </div>
-            <div>
-              <h4 style="font-size: 1.1rem; color: var(--deep-navy); margin-bottom: 8px">
-                <i class="fa-solid fa-circle-check" style="color: #059669; margin-right: 8px"></i>Asesmen untuk Pembelajaran
-              </h4>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6">
-                Menitikberatkan pada <em>assessment as learning</em> dan <em>assessment for learning</em> untuk memberikan umpan balik bermakna secara terus-menerus.
-              </p>
-            </div>
-            <div>
-              <h4 style="font-size: 1.1rem; color: var(--deep-navy); margin-bottom: 8px">
-                <i class="fa-solid fa-circle-check" style="color: #059669; margin-right: 8px"></i>Kolaborasi Komunitas Praktisi
-              </h4>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6">
-                Aktif berbagi praktik baik bersama rekan sejawat dalam forum KKG/MGMP dan kelompok kerja guru untuk terus bertumbuh sebagai pembelajar sepanjang hayat.
-              </p>
-            </div>
-          </div>
+        <!-- ======================================================================
+             DEDICATED PDF VIEWER (DOKUMEN/VISI.PDF)
+             ====================================================================== -->
+        <div style="margin: 45px 0 24px" class="reveal-fade-up delay-150">
+          <h2 style="font-size: 1.95rem; font-weight: 800; color: var(--deep-navy); letter-spacing: -0.02em">
+            Dokumen Asli LK 1 <span class="text-italic-accent">identifikasi diri.</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px">
+            Lembar Kerja 1 resmi yang memuat rumusan visi pendidikan, visi calon guru, serta komitmen pencapaian visi yang telah diverifikasi.
+          </p>
         </div>
 
+        <article class="course-glass-card reveal-fade-up delay-200" id="dokumen-visi" style="padding: 24px">
+          <div class="pdf-viewer-container" style="margin-top: 0">
+            <div class="pdf-viewer-bar">
+              <div class="pdf-file-info">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Visi.pdf (Lembar Kerja 1 - Identifikasi Diri)</span>
+                <span class="pdf-page-count-badge">1 Halaman • LK 1 Terverifikasi</span>
+              </div>
+              <div class="pdf-viewer-controls">
+                <button type="button" class="pdf-btn-ctrl toggle-expand-frame" title="Perbesar / Perkecil Tampilan Viewer">
+                  <i class="fa-solid fa-up-down"></i> <span>Ubah Ukuran</span>
+                </button>
+                <a href="Dokumen/Visi.pdf" target="_blank" class="pdf-btn-ctrl" title="Buka Dokumen di Tab Baru">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Tab Baru</span>
+                </a>
+                <a href="Dokumen/Visi.pdf" download="Visi_Identifikasi_Diri_Retno.pdf" class="pdf-btn-ctrl" title="Unduh Berkas PDF">
+                  <i class="fa-solid fa-download"></i> <span>Unduh</span>
+                </a>
+              </div>
+            </div>
+            <div class="pdf-frame-wrapper" style="height: 600px">
+              <iframe src="Dokumen/Visi.pdf#toolbar=1&amp;navpanes=0" title="PDF Viewer Lembar Kerja 1 Visi Pribadi Guru" loading="lazy"></iframe>
+            </div>
+            <div class="pdf-mobile-fallback">
+              <span><i class="fa-solid fa-circle-info"></i> Tampilan dokumen PDF optimal pada layar desktop/tablet.</span>
+              <a href="Dokumen/Visi.pdf" target="_blank" class="btn-pill-reserve" style="padding: 6px 14px; font-size: 0.78rem">
+                <span>Buka Dokumen PDF</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <!-- Navigasi Halaman -->
-        <div class="subpage-nav-row reveal-fade-up delay-250">
+        <div class="subpage-nav-row reveal-fade-up delay-250" style="margin-top: 50px">
           <a href="index.html" class="btn-pill-glass">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Kembali ke Beranda</span>
@@ -226,6 +391,38 @@
         const header = document.getElementById("siteHeader");
         if (window.scrollY > 30) header.classList.add("scrolled");
         else header.classList.remove("scrolled");
+      });
+
+      // Mobile / Tablet Menu Navigation Toggle
+      const navToggleBtn = document.getElementById("navToggleBtn");
+      const navLinks = document.getElementById("navLinks");
+      const navBackdrop = document.getElementById("navBackdrop");
+
+      function toggleMobileMenu() {
+        const isOpen = navLinks.classList.toggle("open");
+        if (navBackdrop) navBackdrop.classList.toggle("active", isOpen);
+        if (navToggleBtn) {
+          navToggleBtn.setAttribute("aria-expanded", isOpen);
+          const icon = navToggleBtn.querySelector("i");
+          if (icon) icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+        }
+      }
+
+      function closeMobileMenu() {
+        if (navLinks) navLinks.classList.remove("open");
+        if (navBackdrop) navBackdrop.classList.remove("active");
+        if (navToggleBtn) {
+          navToggleBtn.setAttribute("aria-expanded", "false");
+          const icon = navToggleBtn.querySelector("i");
+          if (icon) icon.className = "fa-solid fa-bars";
+        }
+      }
+
+      if (navToggleBtn) navToggleBtn.addEventListener("click", toggleMobileMenu);
+      if (navBackdrop) navBackdrop.addEventListener("click", closeMobileMenu);
+      document.querySelectorAll(".nav-link").forEach((link) => link.addEventListener("click", closeMobileMenu));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMobileMenu();
       });
 
       // Scroll-Linked Rotation for Sunbursts
@@ -270,6 +467,28 @@
         });
       });
 
+      // Interactive PDF Frame Height Toggle (Normal 600px vs Expanded 850px)
+      document.querySelectorAll(".toggle-expand-frame").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const container = btn.closest(".pdf-viewer-container");
+          if (!container) return;
+          const wrapper = container.querySelector(".pdf-frame-wrapper");
+          if (!wrapper) return;
+
+          wrapper.classList.toggle("expanded");
+          const icon = btn.querySelector("i");
+          const text = btn.querySelector("span");
+
+          if (wrapper.classList.contains("expanded")) {
+            if (icon) icon.className = "fa-solid fa-compress";
+            if (text) text.textContent = "Kecilkan";
+          } else {
+            if (icon) icon.className = "fa-solid fa-up-down";
+            if (text) text.textContent = "Ubah Ukuran";
+          }
+        });
+      });
+
       // Scroll Reveal System using IntersectionObserver
       document.addEventListener("DOMContentLoaded", () => {
         updateScrollRotation();
@@ -301,4 +520,3 @@
     </script>
   </body>
 </html>
-
